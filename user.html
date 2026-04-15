@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiNeon Studio | Client Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                    },
+                    colors: {
+                        laser: '#39FF14',
+                        darkbg: '#0A0A0A',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth transitions */
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        /* RTL support */
+        html[dir="rtl"] .ml-auto { margin-left: 0 !important; margin-right: auto !important; }
+        html[dir="rtl"] .ml-3 { margin-left: 0 !important; margin-right: 0.75rem !important; }
+        html[dir="rtl"] .mr-3 { margin-right: 0 !important; margin-left: 0.75rem !important; }
+        html[dir="rtl"] .pl-4 { padding-left: 0 !important; padding-right: 1rem !important; }
+        html[dir="rtl"] .pr-6 { padding-right: 0 !important; padding-left: 1.5rem !important; }
+
+        #sidebar { transition: transform 0.3s ease-in-out; }
+
+        /* Page Content Toggle Classes */
+        .page-content { display: none; }
+        .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Neon Glow Utility */
+        .neon-text-glow {
+            text-shadow: 0 0 10px var(--neon-color, #39FF14), 0 0 20px var(--neon-color, #39FF14), 0 0 40px var(--neon-color, #39FF14);
+        }
+        
+        .neon-box-glow {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2), inset 0 0 10px rgba(57, 255, 20, 0.1);
+        }
+        @media(min-width:1280px){
+            #hamburgerBtn{
+                display: none !important;
+            }
+        }
+         @media(min-width:1024px){
+            #hamburgerBtn{
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden bg-[#F8F9FA] dark:bg-darkbg text-[#0A0A0A] dark:text-white transition-colors duration-500">
+
+    <div id="overlay" class="fixed inset-0 bg-[#0A0A0A]/80 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity duration-300"></div>
+
+    <div class="flex h-screen overflow-hidden relative">
+
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 flex-shrink-0 bg-white dark:bg-[#111111] shadow-2xl lg:shadow-none flex flex-col h-full border-r border-gray-200 dark:border-laser/20 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+
+            <div class="px-6 pt-8 pb-6 flex items-center justify-between border-b border-gray-100 dark:border-white/5">
+               <a href="index.html" class="flex items-center space-x-3 group shrink-0">
+                    <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-black dark:bg-transparent border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] group-hover:scale-105 transition-all duration-500">
+                        <i class="fas fa-bolt text-[#39FF14] text-xl transform group-hover:rotate-12 transition-transform duration-500"></i>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-2xl font-bold tracking-tighter uppercase text-black dark:text-white leading-none">
+                        Lumi<span class="text-[#39FF14]">Neon</span>
+                      </span>
+                      <span class="text-[8px] font-bold tracking-[0.3em] uppercase text-black/40 dark:text-white/40">Studio Excellence</span>
+                    </div>
+                </a>
+                <button id="closeSidebarBtn" class="lg:hidden w-8 h-8 rounded-sm flex items-center justify-center bg-gray-100 dark:bg-[#222] text-[#0A0A0A] dark:text-white hover:text-laser transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="lg:hidden px-6 py-4 flex items-center justify-between border-b border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-[#0A0A0A]">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Preferences</span>
+                <div class="flex items-center gap-3">
+                    <button id="mobileRtlToggle" class="w-10 h-8 flex items-center justify-center rounded-sm bg-white dark:bg-[#111] text-xs font-black tracking-widest text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:text-laser transition-colors shadow-sm">
+                        <span class="rtl-text">RTL</span>
+                    </button>
+                    <button id="mobileDarkToggle" class="w-10 h-8 flex items-center justify-center rounded-sm bg-white dark:bg-[#111] text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:text-laser transition-colors shadow-sm">
+                        <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <nav id="sidebar-nav" class="mt-6 flex-1 px-4 space-y-2 overflow-y-auto no-scrollbar">
+                <a href="javascript:void(0)" onclick="showPage('dashboard', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-bold uppercase tracking-widest rounded-sm bg-[#0A0A0A] dark:bg-laser/10 text-laser border border-laser shadow-[0_0_10px_rgba(57,255,20,0.2)]">
+                    <i class="fas fa-border-all w-6 text-lg"></i>
+                    <span class="ml-3">Overview</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('builder', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 rounded-sm hover:bg-gray-100 dark:hover:bg-[#222] hover:text-laser transition-colors border border-transparent">
+                    <i class="fas fa-wand-magic-sparkles w-6 text-lg"></i>
+                    <span class="ml-3">Studio Builder</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('tracker', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 rounded-sm hover:bg-gray-100 dark:hover:bg-[#222] hover:text-laser transition-colors border border-transparent">
+                    <i class="fas fa-bars-progress w-6 text-lg"></i>
+                    <span class="ml-3">Fabrication</span>
+                    <span class="ml-auto w-2 h-2 rounded-full bg-laser animate-pulse"></span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('install', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 rounded-sm hover:bg-gray-100 dark:hover:bg-[#222] hover:text-laser transition-colors border border-transparent">
+                    <i class="fas fa-calendar-check w-6 text-lg"></i>
+                    <span class="ml-3">Installation</span>
+                </a>
+                <a href="javascript:void(0)" onclick="showPage('account', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 rounded-sm hover:bg-gray-100 dark:hover:bg-[#222] hover:text-laser transition-colors border border-transparent">
+                    <i class="fas fa-user-gear w-6 text-lg"></i>
+                    <span class="ml-3">Settings</span>
+                </a>
+
+                <div class="border-t border-gray-200 dark:border-white/5 my-6"></div>
+
+                <a href="login.html" class="flex items-center px-4 py-3.5 text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 rounded-sm hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-colors border border-transparent">
+                    <i class="fas fa-power-off w-6"></i>
+                    <span class="ml-3">User Logout</span>
+                </a>
+            </nav>
+
+            <div class="p-5 mt-auto border-t border-gray-200 dark:border-white/5 flex items-center bg-gray-50 dark:bg-[#0A0A0A]">
+                <div class="w-10 h-10 rounded-sm bg-[#0A0A0A] flex items-center justify-center text-laser font-bold border border-laser shadow-[0_0_8px_rgba(57,255,20,0.3)]">ED</div>
+                <div class="ml-3">
+                    <p class="text-sm font-bold uppercase tracking-widest">E. Davis</p>
+                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Pro Member</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-y-auto w-full relative">
+
+            <header class="bg-white/90 dark:bg-darkbg/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5 px-6 py-5 sticky top-0 z-30 flex items-center justify-between">
+                <div>
+                    <h1 id="mainTitle" class="text-xl md:text-2xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white md:text-center lg:text-left">User Overview</h1>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="hidden lg:flex items-center gap-3 bg-gray-100 dark:bg-[#111] p-1 rounded-sm border border-gray-200 dark:border-white/10">
+                        <button id="desktopRtlToggle" class="w-10 h-8 flex items-center justify-center rounded-sm text-xs font-bold tracking-widest text-gray-500 dark:text-gray-400 hover:text-laser dark:hover:text-laser transition-colors">
+                            <span class="rtl-text">RTL</span>
+                        </button>
+                        <div class="w-px h-4 bg-gray-300 dark:bg-gray-700"></div>
+                        <button id="desktopDarkToggle" class="w-10 h-8 flex items-center justify-center rounded-sm text-gray-500 dark:text-gray-400 hover:text-laser dark:hover:text-laser transition-colors">
+                            <i id="desktopThemeIcon" class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <button id="hamburgerBtn" class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-black dark:bg-transparent border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)] transition-all active:scale-95 group">
+                        <i class="fas fa-bars text-xl text-[#39FF14] transition-all duration-300"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="p-6 lg:p-10 space-y-10 max-w-7xl mx-auto w-full pb-24">
+
+                <div id="page-dashboard" class="page-content active space-y-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                        <div class="bg-white dark:bg-[#111] rounded-sm p-6 flex flex-col justify-center border border-gray-200 dark:border-white/5 shadow-sm md:items-center md:text-center lg:items-start lg:text-left hover:border-laser transition-colors group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-10 h-10 rounded-sm flex items-center justify-center bg-gray-100 dark:bg-[#222] text-laser group-hover:bg-laser group-hover:text-black transition-colors"><i class="fas fa-layer-group text-lg"></i></div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-gray-500">Saved Designs</p>
+                            </div>
+                            <p class="text-4xl font-bold">12</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#111] rounded-sm p-6 flex flex-col justify-center border border-gray-200 dark:border-white/5 shadow-sm md:items-center md:text-center lg:items-start lg:text-left hover:border-laser transition-colors group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-10 h-10 rounded-sm flex items-center justify-center bg-gray-100 dark:bg-[#222] text-laser group-hover:bg-laser group-hover:text-black transition-colors"><i class="fas fa-box-open text-lg"></i></div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-gray-500">Active Orders</p>
+                            </div>
+                            <p class="text-4xl font-bold">2</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#111] rounded-sm p-6 flex flex-col justify-center border border-laser shadow-[0_0_15px_rgba(57,255,20,0.1)] md:items-center md:text-center lg:items-start lg:text-left relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-laser/10 rounded-full blur-xl -mr-10 -mt-10"></div>
+                            <div class="flex items-center gap-4 mb-4 relative z-10">
+                                <div class="w-10 h-10 rounded-sm flex items-center justify-center bg-laser text-bold shadow-[0_0_10px_rgba(57,255,20,0.4)]"><i class="fas fa-hammer text-lg"></i></div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-laser">In Fabrication</p>
+                            </div>
+                            <p class="text-xl font-bold relative z-10">"Night Owl" Logo</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#111] rounded-sm p-6 flex flex-col justify-center border border-gray-200 dark:border-white/5 shadow-sm md:items-center md:text-center lg:items-start lg:text-left hover:border-laser transition-colors group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-10 h-10 rounded-sm flex items-center justify-center bg-gray-100 dark:bg-[#222] text-laser group-hover:bg-laser group-hover:text-black transition-colors"><i class="fas fa-calendar-check text-lg"></i></div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-gray-500">Installations</p>
+                            </div>
+                            <p class="text-xl font-bold text-gray-400">None Scheduled</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2 bg-white dark:bg-[#111] rounded-sm p-8 border border-gray-200 dark:border-white/5 shadow-sm md:text-center md:flex md:flex-col md:items-center lg:text-left lg:items-start lg:block">
+                            <div class="flex items-center justify-between w-full mb-8">
+                                <h2 class="text-sm font-bold uppercase tracking-widest border-b-2 border-laser pb-1">Recent Activity</h2>
+                                <button onclick="showPage('tracker')" class="text-xs font-bold text-gray-500 hover:text-laser uppercase tracking-widest transition-colors">View All</button>
+                            </div>
+                            <div class="space-y-6 w-full">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-gray-100 dark:border-white/5 gap-4">
+                                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                                        <div class="w-16 h-16 rounded-sm bg-[#050505] border border-gray-800 flex items-center justify-center flex-shrink-0 neon-box-glow">
+                                            <i class="fas fa-font text-laser"></i>
+                                        </div>
+                                        <div class="text-center sm:text-left rtl:sm:text-right">
+                                            <p class="font-bold uppercase tracking-widest">"Good Vibes" Custom</p>
+                                            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Order #LN-9042 · Fabrication Stage</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center sm:items-end gap-2">
+                                        <span class="text-[10px] font-bold tracking-[0.2em] px-3 py-1.5 rounded-sm bg-laser/10 text-laser border border-laser/30 uppercase">LED Bending</span>
+                                        <span class="font-bold">$345.00</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-2 gap-4">
+                                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                                        <div class="w-16 h-16 rounded-sm bg-gray-100 dark:bg-[#222] border border-gray-200 dark:border-gray-800 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-image text-gray-400"></i>
+                                        </div>
+                                        <div class="text-center sm:text-left rtl:sm:text-right">
+                                            <p class="font-bold uppercase tracking-widest text-gray-400">Studio Logo Upload</p>
+                                            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Order #LN-8810 · Delivered</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center sm:items-end gap-2">
+                                        <span class="text-[10px] font-bold tracking-[0.2em] px-3 py-1.5 rounded-sm bg-gray-200 dark:bg-[#333] text-gray-600 dark:text-gray-400 uppercase border border-transparent">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black rounded-sm p-8 border border-laser flex flex-col justify-center items-center text-center relative overflow-hidden group shadow-[0_0_20px_rgba(57,255,20,0.1)]">
+                            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwIDBMMCAwTDAgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=')] opacity-30 pointer-events-none"></div>
+                            <div class="relative z-10">
+                                <i class="fas fa-wand-magic-sparkles text-4xl text-laser mb-6 drop-shadow-[0_0_10px_#39FF14] group-hover:scale-110 transition-transform"></i>
+                                <h2 class="text-xl font-bold uppercase tracking-widest text-white mb-2">New Idea?</h2>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Launch the live builder</p>
+                                <button onclick="showPage('builder')" class="px-8 py-3 w-full rounded-sm font-bold text-sm uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] transition-colors shadow-[0_0_15px_rgba(57,255,20,0.4)]">
+                                    Start Design
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-builder" class="page-content">
+                    <div class="flex flex-col xl:flex-row gap-8">
+                        <div class="flex-1 bg-[#050505] rounded-sm border border-gray-800 flex items-center justify-center p-8 min-h-[400px] xl:min-h-[600px] relative overflow-hidden shadow-inner">
+                            <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMDAiPjwvcmVjdD48cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9zdmc+')]"></div>
+                            
+                            <h2 id="neonPreviewText" class="relative z-10 text-5xl md:text-7xl lg:text-8xl font-bold text-center whitespace-pre-wrap leading-tight text-white transition-all duration-300" style="--neon-color: #39FF14; text-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-color), 0 0 40px var(--neon-color), 0 0 80px var(--neon-color);">
+                                YOUR<br>TEXT
+                            </h2>
+
+                            <div class="absolute bottom-6 right-6 flex items-center gap-2 text-gray-500 font-mono text-xs">
+                                <span>W: <span id="mockWidth" class="text-white">120</span>cm</span>
+                                <span>x</span>
+                                <span>H: <span id="mockHeight" class="text-white">60</span>cm</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full xl:w-[400px] bg-white dark:bg-[#111] rounded-sm border border-gray-200 dark:border-white/5 p-6 md:p-8 flex flex-col md:items-center md:text-center xl:items-start xl:text-left">
+                            <h3 class="text-sm font-bold uppercase tracking-widest border-b-2 border-laser pb-1 mb-8 inline-block">Design Controls</h3>
+                            
+                            <div class="space-y-8 w-full">
+                                <div class="w-full">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2">Neon Text</label>
+                                    <textarea id="neonInput" rows="2" class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-sm tracking-widest focus:outline-none focus:border-laser transition-colors rounded-sm uppercase" placeholder="Enter text here...">YOUR&#10;TEXT</textarea>
+                                </div>
+
+                                <div class="w-full md:flex md:flex-col md:items-center xl:items-start">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">Illumination Color</label>
+                                    <div class="flex flex-wrap gap-4 md:justify-center xl:justify-start" id="colorPicker">
+                                        <button class="color-btn w-10 h-10 rounded-full border-2 border-white ring-2 ring-laser transition-all" style="background-color: #39FF14;" data-color="#39FF14"></button>
+                                        <button class="color-btn w-10 h-10 rounded-full border-2 border-gray-300 opacity-50 hover:opacity-100 transition-all" style="background-color: #00FFC6;" data-color="#00FFC6"></button>
+                                        <button class="color-btn w-10 h-10 rounded-full border-2 border-gray-300 opacity-50 hover:opacity-100 transition-all" style="background-color: #FF007F;" data-color="#FF007F"></button>
+                                        <button class="color-btn w-10 h-10 rounded-full border-2 border-gray-300 opacity-50 hover:opacity-100 transition-all" style="background-color: #FFD700;" data-color="#FFD700"></button>
+                                        <button class="color-btn w-10 h-10 rounded-full border-2 border-gray-300 opacity-50 hover:opacity-100 transition-all" style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+                                    </div>
+                                </div>
+
+                                <div class="w-full md:flex md:flex-col md:items-center xl:items-start">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">Typography</label>
+                                    <div class="grid grid-cols-2 gap-3 w-full">
+                                        <button class="py-3 px-2 border border-laser bg-laser/5 text-laser font-bold text-xs uppercase tracking-widest rounded-sm font-sans">Geometric</button>
+                                        <button class="py-3 px-2 border border-gray-300 dark:border-gray-800 text-gray-500 font-bold text-xs uppercase tracking-widest hover:border-laser transition-colors rounded-sm" style="font-family: cursive;">Cursive</button>
+                                        <button class="py-3 px-2 border border-gray-300 dark:border-gray-800 text-gray-500 font-bold text-xs uppercase tracking-widest hover:border-laser transition-colors rounded-sm" style="font-family: serif;">Classic</button>
+                                        <button class="py-3 px-2 border border-gray-300 dark:border-gray-800 text-gray-500 font-bold text-xs uppercase tracking-widest hover:border-laser transition-colors rounded-sm" style="font-family: monospace;">Retro</button>
+                                    </div>
+                                </div>
+
+                                <div class="w-full">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2">Acrylic Backing</label>
+                                    <select class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-xs uppercase tracking-widest focus:outline-none focus:border-laser transition-colors rounded-sm cursor-pointer appearance-none">
+                                        <option>Cut to Shape</option>
+                                        <option>Cut to Letter</option>
+                                        <option>Full Rectangle</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-800 w-full md:flex md:flex-col md:items-center xl:items-start">
+                                <div class="flex justify-between items-end mb-6 w-full max-w-sm">
+                                    <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Est. Price</span>
+                                    <span class="text-3xl font-bold text-[#0A0A0A] dark:text-white">$<span id="priceMock">345</span></span>
+                                </div>
+                                <button class="w-full px-8 py-4 rounded-sm font-bold text-sm uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] transition-colors shadow-[0_0_15px_rgba(57,255,20,0.4)]">
+                                    Save & Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-tracker" class="page-content space-y-8">
+                    <div class="bg-white dark:bg-[#111] rounded-sm border border-gray-200 dark:border-white/5 overflow-hidden">
+                        <div class="p-6 md:p-8 border-b border-gray-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:text-center lg:text-left">
+                            <div class="w-full md:w-auto">
+                                <h2 class="text-lg font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white">Order #LN-9042</h2>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">"Good Vibes" Custom Sign</p>
+                            </div>
+                            <div class="w-full md:w-auto md:flex md:justify-center">
+                                <span class="px-4 py-2 text-xs font-bold tracking-[0.2em] bg-laser/10 text-laser border border-laser/30 uppercase rounded-sm inline-block">Fabrication Active</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 md:p-12">
+                            <div class="hidden lg:flex justify-between relative">
+                                <div class="absolute top-6 left-12 right-12 h-0.5 bg-gray-200 dark:bg-gray-800 z-0"></div>
+                                <div class="absolute top-6 left-12 w-1/2 h-0.5 bg-laser z-0 shadow-[0_0_10px_#39FF14]"></div>
+                                
+                                <div class="relative z-10 flex flex-col items-center w-48 text-center group">
+                                    <div class="w-12 h-12 bg-[#0A0A0A] border-2 border-laser text-laser rounded-full flex items-center justify-center font-black mb-4 shadow-[0_0_10px_rgba(57,255,20,0.4)]"><i class="fas fa-check"></i></div>
+                                    <h4 class="font-bold text-xs uppercase tracking-widest text-white mb-1">Blueprint</h4>
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase">Approved Oct 12</p>
+                                </div>
+                                
+                                <div class="relative z-10 flex flex-col items-center w-48 text-center group">
+                                    <div class="w-12 h-12 bg-[#0A0A0A] border-2 border-laser text-laser rounded-full flex items-center justify-center font-black mb-4 shadow-[0_0_10px_rgba(57,255,20,0.4)]"><i class="fas fa-check"></i></div>
+                                    <h4 class="font-bold text-xs uppercase tracking-widest text-white mb-1">CNC Routing</h4>
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase">Completed Oct 14</p>
+                                </div>
+
+                                <div class="relative z-10 flex flex-col items-center w-48 text-center group">
+                                    <div class="w-12 h-12 bg-laser border-2 border-laser text-[#0A0A0A] rounded-full flex items-center justify-center font-black mb-4 shadow-[0_0_20px_rgba(57,255,20,0.6)] animate-pulse"><i class="fas fa-hammer"></i></div>
+                                    <h4 class="font-bold text-xs uppercase tracking-widest text-laser mb-1">LED Flexing</h4>
+                                    <p class="text-[10px] font-bold text-gray-400 uppercase">In Progress</p>
+                                </div>
+
+                                <div class="relative z-10 flex flex-col items-center w-48 text-center group opacity-50">
+                                    <div class="w-12 h-12 bg-[#111] border-2 border-gray-700 text-gray-500 rounded-full flex items-center justify-center font-black mb-4"><i class="fas fa-fire"></i></div>
+                                    <h4 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-1">Burn-In Test</h4>
+                                    <p class="text-[10px] font-bold text-gray-600 uppercase">Pending</p>
+                                </div>
+
+                                <div class="relative z-10 flex flex-col items-center w-48 text-center group opacity-50">
+                                    <div class="w-12 h-12 bg-[#111] border-2 border-gray-700 text-gray-500 rounded-full flex items-center justify-center font-black mb-4"><i class="fas fa-truck-fast"></i></div>
+                                    <h4 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-1">Shipped</h4>
+                                    <p class="text-[10px] font-bold text-gray-600 uppercase">Pending</p>
+                                </div>
+                            </div>
+
+                            <div class="lg:hidden space-y-8 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-laser before:via-laser before:to-gray-800 before:z-0">
+                                <div class="relative z-10 flex items-center md:justify-center md:text-center gap-6 md:flex-col">
+                                    <div class="w-12 h-12 bg-[#0A0A0A] border-2 border-laser text-laser rounded-full flex items-center justify-center font-black shadow-[0_0_10px_rgba(57,255,20,0.4)] shrink-0"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm uppercase tracking-widest text-white mb-1">Blueprint Approved</h4>
+                                        <p class="text-xs font-bold text-gray-500 uppercase">Oct 12, 2023</p>
+                                    </div>
+                                </div>
+                                <div class="relative z-10 flex items-center md:justify-center md:text-center gap-6 md:flex-col">
+                                    <div class="w-12 h-12 bg-[#0A0A0A] border-2 border-laser text-laser rounded-full flex items-center justify-center font-black shadow-[0_0_10px_rgba(57,255,20,0.4)] shrink-0"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm uppercase tracking-widest text-white mb-1">Acrylic Routing</h4>
+                                        <p class="text-xs font-bold text-gray-500 uppercase">Oct 14, 2023</p>
+                                    </div>
+                                </div>
+                                <div class="relative z-10 flex items-center md:justify-center md:text-center gap-6 md:flex-col">
+                                    <div class="w-12 h-12 bg-laser border-2 border-laser text-[#0A0A0A] rounded-full flex items-center justify-center font-black shadow-[0_0_20px_rgba(57,255,20,0.6)] animate-pulse shrink-0"><i class="fas fa-hammer"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm uppercase tracking-widest text-laser mb-1">LED Flex Bending</h4>
+                                        <p class="text-xs font-bold text-gray-400 uppercase">Current Stage</p>
+                                    </div>
+                                </div>
+                                <div class="relative z-10 flex items-center md:justify-center md:text-center gap-6 opacity-50 md:flex-col">
+                                    <div class="w-12 h-12 bg-[#111] border-2 border-gray-700 text-gray-500 rounded-full flex items-center justify-center font-black shrink-0"><i class="fas fa-fire"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm uppercase tracking-widest text-gray-400 mb-1">Burn-In Test</h4>
+                                        <p class="text-xs font-bold text-gray-600 uppercase">Pending</p>
+                                    </div>
+                                </div>
+                                <div class="relative z-10 flex items-center md:justify-center md:text-center gap-6 opacity-50 md:flex-col">
+                                    <div class="w-12 h-12 bg-[#111] border-2 border-gray-700 text-gray-500 rounded-full flex items-center justify-center font-black shrink-0"><i class="fas fa-truck-fast"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-sm uppercase tracking-widest text-gray-400 mb-1">Shipped</h4>
+                                        <p class="text-xs font-bold text-gray-600 uppercase">Pending</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-install" class="page-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:text-center lg:text-left">
+                        <div class="bg-black border border-laser p-8 md:p-12 rounded-sm shadow-[0_0_20px_rgba(57,255,20,0.1)] flex flex-col justify-center relative overflow-hidden md:items-center lg:items-start">
+                            <div class="absolute -top-10 -left-10 w-40 h-40 bg-laser/20 rounded-full blur-3xl pointer-events-none"></div>
+                            <i class="fas fa-tools text-4xl text-laser mb-6 relative z-10"></i>
+                            <h2 class="text-3xl font-bold uppercase tracking-widest text-white mb-4 relative z-10">Easy <br>Guide</h2>
+                            <p class="text-gray-400 font-medium text-sm leading-relaxed mb-8 max-w-md relative z-10">
+                                Leave the heavy lifting to our experts. Book a certified LumiNeon installation team to perfectly mount, wire, and conceal cables for your new piece.
+                            </p>
+                            <ul class="space-y-4 text-sm font-bold text-gray-300 relative z-10 md:text-left">
+                                <li class="flex items-center gap-3"><i class="fas fa-check text-laser"></i> Cable concealment</li>
+                                <li class="flex items-center gap-3"><i class="fas fa-check text-laser"></i> Smart-dimmer setup</li>
+                                <li class="flex items-center gap-3"><i class="fas fa-check text-laser"></i> Wall surface protection</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/5 p-8 md:p-10 rounded-sm shadow-sm md:flex md:flex-col md:items-center lg:items-stretch">
+                            <h3 class="text-lg font-bold uppercase tracking-widest border-b-2 border-laser pb-1 mb-8 inline-block md:text-center lg:text-left">Schedule Service</h3>
+                            
+                            <div class="space-y-6 w-full max-w-md">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 md:text-center lg:text-left">Select Order</label>
+                                    <select class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-xs uppercase tracking-widest focus:outline-none focus:border-laser rounded-sm appearance-none">
+                                        <option>#LN-9042 ("Good Vibes")</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 md:text-center lg:text-left">Preferred Date</label>
+                                    <input type="date" class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-xs uppercase tracking-widest focus:outline-none focus:border-laser rounded-sm [color-scheme:dark]">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 md:text-center lg:text-left">Preferred Time</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button class="py-3 border border-laser bg-laser/10 text-laser font-bold text-xs uppercase tracking-widest rounded-sm">Morning</button>
+                                        <button class="py-3 border border-gray-300 dark:border-gray-800 text-gray-500 font-bold text-xs uppercase tracking-widest hover:border-laser transition-colors rounded-sm">Afternoon</button>
+                                    </div>
+                                </div>
+                                <button class="w-full mt-4 px-8 py-4 rounded-sm font-bold text-sm uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] transition-colors shadow-[0_0_15px_rgba(57,255,20,0.4)]">
+                                    Request Booking
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-account" class="page-content">
+                    <div class="bg-white dark:bg-[#111] rounded-sm border border-gray-200 dark:border-white/5 max-w-3xl mx-auto overflow-hidden md:text-center lg:text-left">
+                        <div class="p-8 border-b border-gray-200 dark:border-white/5 flex flex-col md:flex-row items-center gap-6 justify-center lg:justify-start">
+                            <div class="w-24 h-24 rounded-sm bg-[#0A0A0A] flex items-center justify-center text-4xl font-bold text-laser border-2 border-laser shadow-[0_0_15px_rgba(57,255,20,0.3)]">ED</div>
+                            <div>
+                                <h3 class="text-2xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white">Evan Davis</h3>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">LumiNeon Pro Member</p>
+                            </div>
+                        </div>
+                        <div class="p-8 md:p-12 space-y-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 md:text-center lg:text-left">First Name</label>
+                                    <input type="text" value="Evan" class="w-full px-4 py-3 rounded-sm bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-sm font-bold focus:border-laser outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 md:text-center lg:text-left">Last Name</label>
+                                    <input type="text" value="Davis" class="w-full px-4 py-3 rounded-sm bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-sm font-bold focus:border-laser outline-none transition-all">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 md:text-center lg:text-left">Email Address</label>
+                                    <input type="email" value="evan.davis@studio.com" class="w-full px-4 py-3 rounded-sm bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-sm font-bold focus:border-laser outline-none transition-all">
+                                </div>
+                            </div>
+                            <div class="pt-6 flex flex-col sm:flex-row justify-center lg:justify-end gap-4 border-t border-gray-200 dark:border-white/5">
+                                <button class="px-8 py-3 rounded-sm border border-gray-300 dark:border-gray-700 text-xs font-bold uppercase tracking-widest hover:text-laser transition-colors">Discard</button>
+                                <button class="px-8 py-3 rounded-sm bg-laser text-[#0A0A0A] text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:bg-[#32e612]">Update Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        /* ===============================
+           TAB SWITCHING LOGIC
+        ================================ */
+        function showPage(pageId, element) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('page-' + pageId).classList.add('active');
+
+            const titles = {
+                'dashboard': 'Dashboard Overview',
+                'builder': 'Studio Builder',
+                'tracker': 'Fabrication Status',
+                'install': 'Installation Scheduler',
+                'account': 'Profile Settings'
+            };
+            document.getElementById('mainTitle').innerText = titles[pageId];
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-[#0A0A0A]', 'dark:bg-laser/10', 'text-laser', 'border-laser', 'shadow-[0_0_10px_rgba(57,255,20,0.2)]');
+                link.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            });
+
+            if(element) {
+                element.classList.add('bg-[#0A0A0A]', 'dark:bg-laser/10', 'text-laser', 'border-laser', 'shadow-[0_0_10px_rgba(57,255,20,0.2)]');
+                element.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            }
+
+            if (window.innerWidth < 1024) closeSidebar();
+        }
+
+        /* ===============================
+           BUILDER UI MOCK LOGIC
+        ================================ */
+        const textInput = document.getElementById('neonInput');
+        const previewText = document.getElementById('neonPreviewText');
+        const colorBtns = document.querySelectorAll('.color-btn');
+
+        if(textInput && previewText) {
+            textInput.addEventListener('input', (e) => {
+                previewText.innerText = e.target.value || 'YOUR\nTEXT';
+            });
+        }
+
+        colorBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                colorBtns.forEach(b => {
+                    b.classList.remove('ring-2', 'ring-laser');
+                    b.classList.add('opacity-50');
+                });
+                btn.classList.add('ring-2', 'ring-laser');
+                btn.classList.remove('opacity-50');
+                
+                const selectedColor = btn.getAttribute('data-color');
+                previewText.style.setProperty('--neon-color', selectedColor);
+            });
+        });
+
+        /* ===============================
+           SIDEBAR, THEME & RTL LOGIC
+        ================================ */
+        const htmlElement = document.documentElement;
+        const desktopThemeBtn = document.getElementById("desktopDarkToggle");
+        const desktopThemeIcon = document.getElementById("desktopThemeIcon");
+        const desktopRtlBtn = document.getElementById("desktopRtlToggle");
+        
+        // Added Mobile Specific Elements
+        const mobileThemeBtn = document.getElementById("mobileDarkToggle");
+        const mobileThemeIcon = document.getElementById("mobileThemeIcon");
+        const mobileRtlBtn = document.getElementById("mobileRtlToggle");
+        
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+        function applyTheme() {
+            let theme = localStorage.getItem('LumiNeon-dark') || 'dark'; // defaulting to dark for neon studio
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                if (desktopThemeIcon) desktopThemeIcon.className = 'fas fa-sun transition-transform';
+                if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun transition-transform';
+            } else {
+                htmlElement.classList.remove('dark');
+                if (desktopThemeIcon) desktopThemeIcon.className = 'fas fa-moon transition-transform';
+                if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-moon transition-transform';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('LumiNeon-dark', isDark ? 'dark' : 'light');
+            applyTheme();
+        }
+
+        // Apply theme listeners to both Desktop & Mobile buttons
+        if (desktopThemeBtn) desktopThemeBtn.addEventListener('click', toggleTheme);
+        if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+        function toggleRTL() {
+            const currentDir = htmlElement.getAttribute("dir");
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", newDir);
+            
+            // Update Desktop RTL Text
+            const rtlTextSpanDesktop = desktopRtlBtn?.querySelector('.rtl-text');
+            if(rtlTextSpanDesktop) rtlTextSpanDesktop.textContent = newDir === "rtl" ? "LTR" : "RTL";
+            
+            // Update Mobile RTL Text
+            const rtlTextSpanMobile = mobileRtlBtn?.querySelector('.rtl-text');
+            if(rtlTextSpanMobile) rtlTextSpanMobile.textContent = newDir === "rtl" ? "LTR" : "RTL";
+            
+            localStorage.setItem("LumiNeon-rtl", newDir);
+        }
+
+        // Apply RTL listeners to both Desktop & Mobile buttons
+        if (desktopRtlBtn) desktopRtlBtn.addEventListener('click', toggleRTL);
+        if (mobileRtlBtn) mobileRtlBtn.addEventListener('click', toggleRTL);
+
+        function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.add('opacity-100'), 10);
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.remove('opacity-100');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+        }
+
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidebar);
+        if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+        if (overlay) overlay.addEventListener('click', closeSidebar);
+
+        // Initialization
+        applyTheme();
+        const savedRTL = localStorage.getItem("LumiNeon-rtl");
+        if (savedRTL) {
+            htmlElement.setAttribute("dir", savedRTL);
+            
+            const rtlTextSpanDesktop = desktopRtlBtn?.querySelector('.rtl-text');
+            if(rtlTextSpanDesktop) rtlTextSpanDesktop.textContent = savedRTL === "rtl" ? "LTR" : "RTL";
+            
+            const rtlTextSpanMobile = mobileRtlBtn?.querySelector('.rtl-text');
+            if(rtlTextSpanMobile) rtlTextSpanMobile.textContent = savedRTL === "rtl" ? "LTR" : "RTL";
+        }
+    </script>
+</body>
+</html>

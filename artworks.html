@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artworks & Exhibitions | LumiNeon Studio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                    },
+                    colors: {
+                        laser: '#39FF14',
+                        darkbg: '#0A0A0A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+
+        
+        /* Subtle animated background grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+        }
+        .dark .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] text-[#0A0A0A] dark:bg-darkbg dark:text-white pt-20 min-h-screen transition-colors duration-500 overflow-x-hidden">
+
+    <div id="navbar"></div>
+
+<section class="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center lg:justify-start overflow-hidden bg-[#F8F9FA] dark:bg-[#0A0A0A] pt-18 pb-16 transition-colors duration-500 border-b border-gray-200 dark:border-gray-800">
+        
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            <img src="images\led5.avif" 
+                 alt="Neon Art Gallery" 
+                 class="w-full h-full object-cover object-center opacity-40 dark:opacity-50 animate-[pulse_10s_ease-in-out_infinite]" />
+                 
+            <div class="absolute inset-0 bg-black/70 transition-colors duration-500"></div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+               
+
+                <div class="lg:col-span-6 text-center lg:text-left">
+                    
+                    <h2 class="text-laser text-xs font-black tracking-[0.4em] uppercase mb-6 drop-shadow-[0_0_5px_rgba(57,255,20,0.4)]">
+                        Curated Exhibitions
+                    </h2>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white dark:text-white uppercase tracking-tighter leading-[1.05] mb-8 transition-colors duration-500">
+                        Sculpting <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-laser to-[#32e612] drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">With Light.</span>
+                    </h1>
+                    
+                    <div class="relative">
+                        <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-laser hidden md:block shadow-[0_0_10px_rgba(57,255,20,0.6)]"></div>
+                        
+                        <p class="text-gray-200 dark:text-gray-300 font-medium text-lg md:text-xl leading-relaxed mb-10 md:pl-8 transition-colors duration-500">
+                            Beyond commercial signage lies the realm of pure luminescence. Explore our gallery of bespoke LED art installations, avant-garde collaborations, and exclusive studio masterpieces.
+                        </p>
+                    </div>
+
+                    <a href="gallery.html" class="group relative inline-flex items-center justify-center px-10 py-4 text-sm font-bold text-[#0A0A0A] dark:text-white uppercase tracking-widest overflow-hidden border border-gray-300 dark:border-gray-600 hover:border-laser transition-colors duration-500 bg-white/40 dark:bg-[#0A0A0A]/40 backdrop-blur-sm">
+                        <span class="absolute inset-0 w-0 bg-laser transition-all duration-500 ease-out group-hover:w-full"></span>
+                        <span class="relative group-hover:text-[#0A0A0A] transition-colors duration-500">Enter The Archive</span>
+                    </a>
+                </div>
+
+                <div class="hidden lg:block lg:col-span-4 lg:col-start-9 relative mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-sm ml-auto aspect-[4/5] p-3 border border-gray-300 dark:border-gray-700 hover:border-laser/50 backdrop-blur-md bg-white/30 dark:bg-[#0A0A0A]/30 transition-all duration-700 group shadow-2xl">
+                        <div class="w-full h-full overflow-hidden relative rounded-sm bg-gray-100 dark:bg-black">
+                            <img src="images\led.avif" 
+                                 alt="Abstract Neon Art" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
+                                 
+                            <div class="absolute top-0 left-0 w-6 h-6 border-t-[3px] border-l-[3px] border-laser opacity-0 group-hover:opacity-100 transition-opacity duration-500 m-4"></div>
+                            <div class="absolute bottom-0 right-0 w-6 h-6 border-b-[3px] border-r-[3px] border-laser opacity-0 group-hover:opacity-100 transition-opacity duration-500 m-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+   
+
+
+<!-- FILTER / CATEGORIES -->
+<section class="py-12 bg-white dark:bg-darkbg">
+  <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-4 filter-buttons">
+    <button data-filter="all" class="filter-btn px-6 py-2 border border-laser text-laser rounded-full hover:bg-laser hover:text-black transition active-filter">All</button>
+    <button data-filter="logos" class="filter-btn px-6 py-2 border border-gray-400 dark:border-gray-700 rounded-full hover:border-laser text-gray-600 dark:text-gray-400 transition">Logos</button>
+    <button data-filter="quotes" class="filter-btn px-6 py-2 border border-gray-400 dark:border-gray-700 rounded-full hover:border-laser text-gray-600 dark:text-gray-400 transition">Quotes</button>
+    <button data-filter="wall-art" class="filter-btn px-6 py-2 border border-gray-400 dark:border-gray-700 rounded-full hover:border-laser text-gray-600 dark:text-gray-400 transition">Wall Art</button>
+    <button data-filter="3d-signs" class="filter-btn px-6 py-2 border border-gray-400 dark:border-gray-700 rounded-full hover:border-laser text-gray-600 dark:text-gray-400 transition">3D Signs</button>
+  </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gallery-container">
+
+    <!-- CARD -->
+    <div class="filter-item group relative overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-500" data-category="3d-signs">
+      <img src="images\3d1.webp" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500" />
+      <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+        <span class="text-laser font-bold uppercase">View</span>
+      </div>
+    </div>
+
+    <div class="filter-item group relative overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-500" data-category="logos">
+      <img src="images\3d2.avif" class="w-full h-64 object-cover group-hover:scale-110 transition" />
+      <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+        <span class="text-laser">View</span>
+      </div>
+    </div>
+
+    <div class="filter-item group relative overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-500" data-category="quotes">
+      <img src="images\3d3.webp" class="w-full h-64 object-cover group-hover:scale-110 transition" />
+      <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+        <span class="text-laser">View</span>
+      </div>
+    </div>
+
+    <div class="filter-item group relative overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-500" data-category="wall-art">
+      <img src="images\3d4.avif" class="w-full h-64 object-cover group-hover:scale-110 transition" />
+      <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+        <span class="text-laser">View</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+    <section class="py-24 bg-white dark:bg-darkbg transition-colors duration-500 relative overflow-hidden">
+        
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-laser/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="order-2 lg:order-1 relative group">
+                    <div class="absolute inset-0 border-[3px] border-gray-200 dark:border-gray-800 group-hover:border-laser transition-colors duration-700 translate-x-4 translate-y-4 rounded-sm"></div>
+                    <div class="relative z-10 w-full h-[600px] bg-gray-100 dark:bg-black overflow-hidden rounded-sm border border-gray-200 dark:border-gray-800">
+                        <img src="images\ld.avif" 
+                             alt="Featured Exhibition" 
+                             class="w-full h-full object-cover grayscale-0 group-hover:grayscale group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <div class="inline-block border border-laser text-laser px-4 py-1.5 font-bold text-[10px] tracking-[0.3em] uppercase mb-6 bg-laser/5">
+                        Current Exhibition
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold uppercase tracking-tight text-[#0A0A0A] dark:text-white leading-[1.1] mb-6 transition-colors duration-500">
+                        The <span class="text-laser">Violet Horizon</span> Series
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6 transition-colors duration-500 text-lg">
+                        An exploration of futuristic brutalism and soft luminescence. This collection merges heavy, industrial architectural textures with the delicate, continuous flow of high-intensity LED flex.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-10 border-t border-gray-200 dark:border-gray-800 pt-8 transition-colors duration-500">
+                        <div>
+                            <span class="block text-gray-500 font-black text-[10px] uppercase tracking-widest mb-1">Medium</span>
+                            <span class="block text-[#0A0A0A] dark:text-white font-bold text-sm tracking-wider">Silicone RGB & Brushed Steel</span>
+                        </div>
+                        <div>
+                            <span class="block text-gray-500 font-black text-[10px] uppercase tracking-widest mb-1">Location</span>
+                            <span class="block text-[#0A0A0A] dark:text-white font-bold text-sm tracking-wider">LumiNeon Main Gallery, LA</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-gray-50 dark:bg-[#050505] transition-colors duration-500 border-y border-gray-200 dark:border-gray-800">
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-laser font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Visual Index</span>
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white transition-colors duration-500">
+                    Selected <span class="text-laser">Works</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <div class="filter-item group relative overflow-hidden bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm hover:border-laser transition-all duration-500 md:row-span-2 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] flex flex-col h-full" data-category="wall-art">
+                    <div class="relative w-full flex-1 min-h-[400px] overflow-hidden bg-black">
+                        <img src="images\img2.avif" alt="Neon Atmosphere" class="absolute inset-0 w-full h-full object-cover art-img">
+                        <div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-[#111] transition-colors duration-500">
+                        <h3 class="font-black uppercase tracking-widest text-lg text-[#0A0A0A] dark:text-white mb-1">Neon Atmosphere</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest">Mixed Media / 2025</p>
+                    </div>
+                </div>
+
+                <div class="filter-item group relative overflow-hidden bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm hover:border-laser transition-all duration-500 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] flex flex-col h-[350px]" data-category="quotes">
+                    <div class="relative w-full flex-1 overflow-hidden bg-black">
+                        <img src="images\img1.webp" alt="Eternal Vow" class="absolute inset-0 w-full h-full object-cover art-img">
+                        <div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-[#111] transition-colors duration-500">
+                        <h3 class="font-black uppercase tracking-widest text-lg text-[#0A0A0A] dark:text-white mb-1">Eternal Vow</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest">Private Commission</p>
+                    </div>
+                </div>
+
+                <div class="filter-item group relative overflow-hidden bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm hover:border-laser transition-all duration-500 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] flex flex-col h-[350px]" data-category="logos">
+                    <div class="relative w-full flex-1 overflow-hidden bg-black">
+                        <img src="images\img3.webp" alt="Urban Typographic" class="absolute inset-0 w-full h-full object-cover art-img">
+                        <div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-[#111] transition-colors duration-500">
+                        <h3 class="font-black uppercase tracking-widest text-lg text-[#0A0A0A] dark:text-white mb-1">Urban Typography</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest">Commercial Art</p>
+                    </div>
+                </div>
+
+                <div class="filter-item group relative overflow-hidden bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm hover:border-laser transition-all duration-500 md:col-span-2 shadow-sm hover:shadow-[0_0_20px_rgba(57,255,20,0.15)] flex flex-col h-[400px]" data-category="3d-signs">
+                    <div class="relative w-full flex-1 overflow-hidden bg-black">
+                        <img src="images\img12.avif" alt="The Blueprint" class="absolute inset-0 w-full h-full object-cover art-img">
+                        <div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-[#111] transition-colors duration-500 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-black uppercase tracking-widest text-lg text-[#0A0A0A] dark:text-white mb-1">The Blueprint</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest">Studio Original</p>
+                        </div>
+                        <a href="artworks.html" class="w-10 h-10 border border-gray-300 dark:border-gray-700 rounded-sm flex items-center justify-center hover:border-laser hover:text-laser transition-colors text-[#0A0A0A] dark:text-white">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center">
+                <button class="px-10 py-4 border-2 border-gray-300 dark:border-gray-700 text-[#0A0A0A] dark:text-white font-black text-xs uppercase tracking-widest hover:border-laser hover:text-laser transition-colors duration-300 rounded-sm bg-transparent shadow-sm">
+                    View Full Archive
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-white dark:bg-darkbg transition-colors duration-500 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white transition-colors duration-500 mb-4">
+                    The Artistic <span class="text-laser">Process</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium">Concept to execution. How our studio transforms ideas into physical light.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <div class="bg-gray-50 dark:bg-[#111] p-10 border border-gray-200 dark:border-gray-800 rounded-sm transition-colors duration-500 group hover:border-laser">
+                    <div class="text-laser font-black text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity">01</div>
+                    <h3 class="text-xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 transition-colors">Ideation</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Every masterpiece begins with a digital wireframe. We map luminosity, vector paths, and structural focal points to ensure the design scales perfectly from screen to physical space.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#111] p-10 border border-gray-200 dark:border-gray-800 rounded-sm transition-colors duration-500 group hover:border-laser">
+                    <div class="text-laser font-black text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity">02</div>
+                    <h3 class="text-xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 transition-colors">Engineering</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Selecting the medium. We precision-cut high-density acrylic or brushed steel backings, establishing the invisible foundation that supports the vibrant LED flex technology.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#111] p-10 border border-gray-200 dark:border-gray-800 rounded-sm transition-colors duration-500 group hover:border-laser">
+                    <div class="text-laser font-black text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity">03</div>
+                    <h3 class="text-xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 transition-colors">Illumination</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        The art of bending light. Our artisans hand-mold the silicone tubing, wire the circuitry, and perform a 48-hour burn-in test to guarantee flawless, uninterrupted brightness.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="relative bg-black w-full overflow-hidden text-center border-t-4 border-laser mb-0 pb-24 pt-24 lg:pb-32 lg:pt-32 flex flex-col items-center justify-center">
+        
+        <div class="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwIDBMMCAwTDAgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=')] opacity-20 pointer-events-none"></div>
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[300px] bg-laser opacity-10 blur-[150px] pointer-events-none"></div>
+
+        <div class="relative z-10 w-full px-6 max-w-4xl mx-auto">
+            <i class="fas fa-paintbrush text-4xl text-laser mb-8 drop-shadow-[0_0_15px_rgba(57,255,20,0.6)]"></i>
+            
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter leading-[1.1]">
+                Commission A <span class="text-laser">Masterpiece</span>
+            </h2>
+            
+            <p class="text-gray-400 font-medium text-lg mb-12 max-w-2xl mx-auto">
+                Have a bold vision? Our studio is open for private commissions, large-scale architectural lighting, and bespoke commercial art. 
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+                <a href="contact.html" class="w-full sm:w-auto inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] shadow-[0_0_20px_rgba(57,255,20,0.3)] hover:shadow-[0_0_30px_rgba(57,255,20,0.6)] transition-all duration-300 rounded-sm">
+                    Consult An Artisan
+                </a>
+                <a href="pricing.html" class="w-full sm:w-auto inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-widest text-white border-2 border-gray-700 hover:border-laser hover:text-laser transition-colors duration-300 rounded-sm bg-[#0A0A0A]/50 backdrop-blur-sm">
+                    Open Studio Builder
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.filter-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+
+                    // Update active button state
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('border-laser', 'text-laser', 'active-filter');
+                        btn.classList.add('border-gray-400', 'dark:border-gray-700', 'text-gray-600', 'dark:text-gray-400');
+                    });
+                    button.classList.add('border-laser', 'text-laser', 'active-filter');
+                    button.classList.remove('border-gray-400', 'dark:border-gray-700', 'text-gray-600', 'dark:text-gray-400');
+
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filter === 'all' || filter === category) {
+                            item.style.display = 'flex';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 500);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

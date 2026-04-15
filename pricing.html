@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | LumiNeon Studio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                    },
+                    colors: {
+                        laser: '#39FF14',
+                        darkbg: '#0A0A0A',
+                    }
+                }
+            }
+        };
+    </script>
+    </head>
+    <body class="bg-[#F8F9FA] text-[#0A0A0A] dark:bg-[#0A0A0A] dark:text-white pt-24 min-h-screen transition-colors duration-500">
+
+    <div id="navbar"></div>
+<section class="relative min-h-[70vh] lg:min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#F8F9FA] dark:bg-[#0A0A0A] transition-colors duration-500 pt-20 border-b border-gray-200 dark:border-gray-800">
+    
+    <div class="absolute inset-0 z-0">
+        <img src="images\14.avif" 
+             alt="Neon Studio Pricing" 
+             class="w-full h-full object-cover dark:opacity-40  transition-all duration-1000 scale-105 ">
+             
+        <div class="absolute inset-0 bg-black/50 transition-colors duration-500"></div>
+    </div>
+
+    <div class="absolute top-1/4 left-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] bg-[#39FF14]/10 rounded-full blur-[150px] pointer-events-none -translate-x-1/2 -translate-y-1/4 mix-blend-screen"></div>
+    
+    <div class="mb-16 container mx-auto px-6 sm:px-12 lg:px-20 relative z-10 text-center flex flex-col items-center mt-10">
+        
+        <div class=" inline-flex items-center gap-3 px-5 py-2.5 border border-gray-300 dark:border-[#39FF14]/40 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md mb-8 shadow-sm dark:shadow-[0_0_15px_rgba(57,255,20,0.1)] transition-colors duration-500 rounded-sm">
+            <i class="fas fa-file-invoice-dollar text-[#0A0A0A] dark:text-[#39FF14] text-xs transition-colors duration-500"></i>
+            <span class="text-[#0A0A0A] dark:text-[#39FF14] font-black text-[8px] sm:text-xs uppercase tracking-[0.3em] transition-colors duration-500">
+                Transparent Rates
+            </span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white dark:text-white leading-[0.95] mb-8 transition-colors duration-500 relative">
+            Your Vision. <br>
+            <span class="relative inline-block mt-4">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#39FF14] to-[#32e612] drop-shadow-[0_0_20px_rgba(57,255,20,0.4)] dark:drop-shadow-[0_0_30px_rgba(57,255,20,0.6)]">
+                    The Investment
+                </span>
+                <div class="absolute -top-2 -left-6 w-6 h-6 border-t-[3px] border-l-[3px] border-[#39FF14] opacity-80"></div>
+                <div class="absolute -bottom-2 -right-6 w-6 h-6 border-b-[3px] border-r-[3px] border-[#39FF14] opacity-80"></div>
+            </span>
+        </h1>
+
+        <p class="text-gray-200 dark:text-gray-400 font-medium text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed transition-colors duration-500 mb-12">
+            Whether you need a quick pre-designed piece for your living room or a massive, multi-tiered commercial installation, our pricing is straightforward, competitive, and built on uncompromising quality.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-8 w-full sm:w-auto">
+            <a href="contact.html" class="w-full sm:w-auto px-8 py-4 font-black text-xs uppercase tracking-widest text-[#0A0A0A] bg-[#39FF14] hover:bg-[#32e612] shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all duration-300 text-center rounded-sm">
+                Get Custom Quote
+            </a>
+            
+            <a href="artworks.html" class="flex flex-col items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-500 cursor-pointer group mt-4 sm:mt-0">
+                <span class="text-white dark:text-[#39FF14] text-[10px] font-black tracking-[0.3em] uppercase mb-4 transition-colors duration-500 group-hover:drop-shadow-[0_0_8px_rgba(57,255,20,0.8)]">
+                    View Tiers
+                </span>
+                <div class="w-px h-12 bg-white dark:from-[#39FF14] to-transparent animate-[bounce_2s_infinite] transition-colors duration-500"></div>
+            </a>
+        </div>
+
+    </div>
+</section>
+<section id="pricing-tiers" class="py-24 bg-white dark:bg-[#050505] transition-colors duration-500 relative overflow-hidden">
+    
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#39FF14]/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#39FF14]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3"></div>
+
+    <div class="container mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white transition-colors duration-500">
+                Choose Your <span class="text-[#39FF14]">Path</span>
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
+                From ready-to-ship artwork to fully bespoke architectural lighting. Find the tier that fits your vision.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <div class="flex flex-col bg-[#F8F9FA] dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm p-8 transition-all duration-500 hover:border-[#39FF14] dark:hover:border-[#39FF14] hover:shadow-[0_0_20px_rgba(57,255,20,0.1)] group">
+                <div class="mb-8">
+                    <span class="text-[#0A0A0A] dark:text-[#39FF14] font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block transition-colors">Tier 01</span>
+                    <h3 class="text-2xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 transition-colors">The Collection</h3>
+                    <p class="text-gray-500 text-sm font-medium h-12">Curated, ready-to-ship neon art designed by our in-house team.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-gray-400 text-xs font-bold uppercase tracking-widest block mb-1">Starting At</span>
+                    <div class="text-4xl font-bold text-[#0A0A0A] dark:text-white transition-colors">$150<span class="text-lg text-gray-500">.00</span></div>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> 50+ Exclusive Designs
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Fixed Sizes & Colors
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Ships in 3-5 Business Days
+                    </li>
+                </ul>
+                <a href="shop.html" class="w-full block py-4 text-center font-bold text-xs uppercase tracking-widest text-[#0A0A0A] dark:text-white border-2 border-gray-300 dark:border-gray-700 group-hover:border-[#39FF14] dark:group-hover:border-[#39FF14] transition-colors rounded-sm">
+                    Shop Pre-Made
+                </a>
+            </div>
+
+            <div class="flex flex-col bg-white dark:bg-[#0A0A0A] border-[3px] border-[#39FF14] rounded-sm p-8 relative transform md:-translate-y-4 shadow-[0_20px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_rgba(57,255,20,0.1)] transition-colors duration-500">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#39FF14] text-[#0A0A0A] px-4 py-1 font-black text-[10px] uppercase tracking-[0.3em] shadow-[0_0_10px_rgba(57,255,20,0.5)]">
+                    Most Popular
+                </div>
+                
+                <div class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.6)]"></div>
+                <div class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.6)]"></div>
+                <div class="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.6)]"></div>
+                <div class="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.6)]"></div>
+
+                <div class="mb-8 mt-2">
+                    <span class="text-[#39FF14] font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">Tier 02</span>
+                    <h3 class="text-2xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 transition-colors">Custom Text</h3>
+                    <p class="text-gray-500 text-sm font-medium h-12">Build your own glowing quotes, names, or phrases using our live studio tool.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-gray-400 text-xs font-bold uppercase tracking-widest block mb-1">Starting At</span>
+                    <div class="text-4xl font-bold text-[#0A0A0A] dark:text-white transition-colors">$250<span class="text-lg text-gray-500">.00</span></div>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm font-bold text-[#0A0A0A] dark:text-white transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Interactive Live Preview
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-[#0A0A0A] dark:text-white transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> 30+ Premium Fonts
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-[#0A0A0A] dark:text-white transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Free Remote & Dimmer Included
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-[#0A0A0A] dark:text-white transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Ships in 2-3 Weeks
+                    </li>
+                </ul>
+                <a href="artworks.html" class="w-full block py-4 text-center font-bold text-xs uppercase tracking-widest text-[#0A0A0A] bg-[#39FF14] hover:bg-[#32e612] shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] transition-all duration-300 rounded-sm">
+                    Open Builder
+                </a>
+            </div>
+
+            <div class="flex flex-col bg-[#F8F9FA] dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm p-8 transition-all duration-500 hover:border-[#39FF14] dark:hover:border-[#39FF14] hover:shadow-[0_0_20px_rgba(57,255,20,0.1)] group md:col-span-2 lg:col-span-1 md:max-w-md lg:max-w-none mx-auto w-full">
+                <div class="mb-8">
+                    <span class="text-[#0A0A0A] dark:text-[#39FF14] font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block transition-colors">Tier 03</span>
+                    <h3 class="text-2xl font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 transition-colors">Business / Logo</h3>
+                    <p class="text-gray-500 text-sm font-medium h-12">Complex brand logos, large-scale commercial installations, and RGB art.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-gray-400 text-xs font-bold uppercase tracking-widest block mb-1">Pricing Base</span>
+                    <div class="text-4xl font-bold text-[#0A0A0A] dark:text-white transition-colors">Quote</div>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> 1-on-1 Design Consultation
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Exact Brand Pantone Matching
+                    </li>
+                    <li class="flex items-start gap-3 text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors">
+                        <i class="fas fa-check text-[#39FF14] mt-0.5"></i> Outdoor (IP67) Weatherproofing
+                    </li>
+                </ul>
+                <a href="contact.html" class="w-full block py-4 text-center font-bold text-xs uppercase tracking-widest text-[#0A0A0A] dark:text-white border-2 border-gray-300 dark:border-gray-700 group-hover:border-[#39FF14] dark:group-hover:border-[#39FF14] transition-colors rounded-sm">
+                    Upload Logo
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-12 bg-[#F8F9FA] dark:bg-[#0A0A0A] border-y border-gray-200 dark:border-gray-800 transition-colors duration-500">
+    <div class="container mx-auto px-6 sm:px-12 lg:px-20">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto">
+            
+            <div class="text-center md:text-left rtl:md:text-right shrink-0">
+                <h3 class="text-lg font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors">The Studio Standard</h3>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mt-1">Included free with every purchase</p>
+            </div>
+            
+            <div class="grid grid-cols-3 md:flex md:flex-wrap justify-center md:justify-end gap-x-4 gap-y-6 md:gap-12 w-full">
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3 group text-center md:text-left">
+                    <div class="w-10 h-10 rounded-sm bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 flex items-center justify-center transition-colors group-hover:border-[#39FF14] shrink-0">
+                        <i class="fas fa-shield-halved text-[#39FF14]"></i>
+                    </div>
+                    <span class="text-[9px] md:text-xs font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors leading-tight">2-Year Warranty</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3 group text-center md:text-left">
+                    <div class="w-10 h-10 rounded-sm bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 flex items-center justify-center transition-colors group-hover:border-[#39FF14] shrink-0">
+                        <i class="fas fa-plug text-[#39FF14]"></i>
+                    </div>
+                    <span class="text-[9px] md:text-xs font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors leading-tight">12V Power Supply</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3 group text-center md:text-left">
+                    <div class="w-10 h-10 rounded-sm bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 flex items-center justify-center transition-colors group-hover:border-[#39FF14] shrink-0">
+                        <i class="fas fa-screwdriver-wrench text-[#39FF14]"></i>
+                    </div>
+                    <span class="text-[9px] md:text-xs font-bold uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors leading-tight">Mount Hardware</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-white dark:bg-[#111] border-b border-gray-200 dark:border-gray-800 transition-colors duration-500 relative overflow-hidden">
+    
+    <div class="container mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-3 px-4 py-2 border border-gray-300 dark:border-[#39FF14]/40 bg-gray-50 dark:bg-[#0A0A0A]/80 backdrop-blur-md mb-6 shadow-sm dark:shadow-[0_0_15px_rgba(57,255,20,0.1)] transition-colors duration-500 rounded-sm">
+                <i class="fas fa-calculator text-[#0A0A0A] dark:text-[#39FF14]"></i>
+                <span class="text-[#0A0A0A] dark:text-[#39FF14] font-black text-[10px] uppercase tracking-[0.3em]">Live Calculator</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white transition-colors duration-500">
+                Estimate Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#39FF14] to-[#32e612]">Custom Glow</span>
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
+                Get a baseline estimate for custom text signs. For precise sizing, fonts, and exact quotes, launch the full Studio Builder.
+            </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto bg-[#F8F9FA] dark:bg-[#0A0A0A] border border-gray-200 dark:border-gray-800 p-8 md:p-12 rounded-sm shadow-xl flex flex-col lg:flex-row gap-12 lg:gap-20 transition-colors duration-500">
+            
+            <div class="flex-1 space-y-8">
+                
+                <div>
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-xs font-black uppercase tracking-widest text-[#0A0A0A] dark:text-white">Number of Letters</label>
+                        <span id="charCountDisplay" class="text-xl font-black text-[#39FF14]">10</span>
+                    </div>
+                    <input type="range" id="charSlider" min="1" max="50" value="10" class="w-full h-2 bg-gray-300 dark:bg-gray-800 rounded-sm appearance-none cursor-pointer accent-[#39FF14]">
+                    <div class="flex justify-between mt-2 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                        <span>1 Letter</span>
+                        <span>50 Letters</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-xs font-black uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 block">Estimated Width (Size Tier)</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <button class="size-btn active py-3 border-2 border-[#39FF14] bg-[#39FF14]/10 text-[#0A0A0A] dark:text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-colors" data-multiplier="1">Small<br><span class="text-[9px] text-gray-500 block mt-1">~50cm</span></button>
+                        <button class="size-btn py-3 border-2 border-gray-300 dark:border-gray-800 text-gray-500 hover:border-[#39FF14] hover:text-[#0A0A0A] dark:hover:text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-colors" data-multiplier="1.5">Medium<br><span class="text-[9px] text-gray-500 block mt-1">~75cm</span></button>
+                        <button class="size-btn py-3 border-2 border-gray-300 dark:border-gray-800 text-gray-500 hover:border-[#39FF14] hover:text-[#0A0A0A] dark:hover:text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-colors" data-multiplier="2.2">Large<br><span class="text-[9px] text-gray-500 block mt-1">~100cm</span></button>
+                        <button class="size-btn py-3 border-2 border-gray-300 dark:border-gray-800 text-gray-500 hover:border-[#39FF14] hover:text-[#0A0A0A] dark:hover:text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-colors" data-multiplier="3.5">Epic<br><span class="text-[9px] text-gray-500 block mt-1">150cm+</span></button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-xs font-black uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-4 block">Environment</label>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <label class="flex-1 flex items-center p-4 border border-gray-300 dark:border-gray-800 cursor-pointer rounded-sm hover:border-[#39FF14] transition-colors group">
+                            <input type="radio" name="environment" value="0" checked class="hidden peer">
+                            <div class="w-4 h-4 border-2 border-gray-400 peer-checked:border-[#39FF14] peer-checked:bg-[#39FF14] rounded-full mr-3 flex items-center justify-center transition-colors"></div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400 group-hover:text-[#0A0A0A] dark:peer-checked:text-white transition-colors">Indoor (Standard)</span>
+                        </label>
+                        <label class="flex-1 flex items-center p-4 border border-gray-300 dark:border-gray-800 cursor-pointer rounded-sm hover:border-[#39FF14] transition-colors group">
+                            <input type="radio" name="environment" value="75" class="hidden peer">
+                            <div class="w-4 h-4 border-2 border-gray-400 peer-checked:border-[#39FF14] peer-checked:bg-[#39FF14] rounded-full mr-3 flex items-center justify-center transition-colors"></div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400 group-hover:text-[#0A0A0A] dark:peer-checked:text-white transition-colors">Outdoor (IP67) <span class="text-[#39FF14] ml-1">+$75</span></span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="w-full lg:w-1/3 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 p-8 rounded-sm flex flex-col justify-center relative overflow-hidden transition-colors duration-500 shadow-lg">
+                <div class="absolute -top-1 -right-1 w-8 h-8 border-t-[3px] border-r-[3px] border-[#39FF14]"></div>
+                <div class="absolute -bottom-1 -left-1 w-8 h-8 border-b-[3px] border-l-[3px] border-[#39FF14]"></div>
+                
+                <span class="text-gray-500 font-black text-[10px] uppercase tracking-[0.3em] mb-2 block">Estimated Investment</span>
+                <div class="flex items-start text-[#0A0A0A] dark:text-white transition-colors">
+                    <span class="text-2xl font-bold mt-2 mr-1">$</span>
+                    <span id="livePriceDisplay" class="text-6xl md:text-7xl font-black tracking-tighter">250</span>
+                </div>
+                
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-6 mb-8 border-t border-gray-200 dark:border-gray-800 pt-6">
+                    *This is a baseline estimate. Final pricing depends on specific font choice, acrylic backing style, and exact dimensions selected in the builder.
+                </p>
+
+                <a href="artworks.html" class="w-full py-4 text-center font-black text-xs uppercase tracking-widest text-[#0A0A0A] bg-[#39FF14] hover:bg-[#32e612] shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_20px_rgba(57,255,20,0.5)] transition-all duration-300 rounded-sm">
+                    Open Studio Builder
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-[#F8F9FA] dark:bg-[#050505] transition-colors duration-500 border-t border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-6 sm:px-12 lg:px-20">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white transition-colors duration-500">
+                Pricing & <span class="text-[#39FF14]">Logistics</span>
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
+                Everything you need to know about payments, shipping, and bulk studio orders.
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto flex flex-col gap-4">
+            
+            <div class="faq-item group bg-white dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden shadow-sm">
+                <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                        Are there any hidden fees or taxes?
+                    </h4>
+                    <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-100 dark:border-gray-800 mt-2">
+                        No hidden fees. The price you see in the Studio Builder is the final price for the sign itself, which includes the power supply, remote, and mounting kit. Taxes and shipping are calculated fairly at checkout based on your exact global location.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item group bg-white dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden shadow-sm">
+                <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                        Do you offer commercial or bulk discounts?
+                    </h4>
+                    <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-100 dark:border-gray-800 mt-2">
+                        Yes. If you are ordering 3 or more signs for a venue, event, or franchise, please contact our Commercial Team via the Contact page. We offer tiered wholesale pricing and dedicated account managers for B2B clients.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item group bg-white dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden shadow-sm">
+                <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                        What payment methods do you accept?
+                    </h4>
+                    <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-100 dark:border-gray-800 mt-2">
+                        We accept all major credit cards (Visa, MasterCard, Amex), PayPal, and Apple Pay. For larger custom orders over $1,500, we also offer flexible split payment options (50% upfront, 50% upon shipping) and wire transfers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item group bg-white dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden shadow-sm">
+                <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                    <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                        How much does shipping cost?
+                    </h4>
+                    <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-100 dark:border-gray-800 mt-2">
+                        We offer flat-rate standard shipping globally (usually around $40-$60 depending on region) which takes 10-14 days total. We also offer VIP Express Fabrication & Shipping that moves your order to the front of the queue and delivers in 5-7 days.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Calculator Logic ---
+        const charSlider = document.getElementById('charSlider');
+        const charCountDisplay = document.getElementById('charCountDisplay');
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        const envRadios = document.querySelectorAll('input[name="environment"]');
+        const priceDisplay = document.getElementById('livePriceDisplay');
+
+        // Base Pricing Metrics
+        const baseCost = 100; // Flat base cost
+        const costPerLetter = 15; // Cost per character
+        let currentMultiplier = 1; // Default to 'Small'
+        let currentEnvCost = 0; // Default indoor
+
+        function calculatePrice() {
+            const letters = parseInt(charSlider.value);
+            const baseLettersCost = baseCost + (letters * costPerLetter);
+            const sizeAdjustedCost = baseLettersCost * currentMultiplier;
+            const finalCost = Math.round(sizeAdjustedCost + currentEnvCost);
+            
+            // Animate price counter (simple version)
+            priceDisplay.textContent = finalCost;
+        }
+
+        // Letter Slider Event
+        charSlider.addEventListener('input', (e) => {
+            charCountDisplay.textContent = e.target.value;
+            calculatePrice();
+        });
+
+        // Size Buttons Event
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Remove active classes
+                sizeBtns.forEach(b => {
+                    b.classList.remove('border-[#39FF14]', 'bg-[#39FF14]/10', 'text-[#0A0A0A]', 'dark:text-white');
+                    b.classList.add('border-gray-300', 'dark:border-gray-800', 'text-gray-500');
+                });
+                // Add active to clicked
+                const target = e.currentTarget;
+                target.classList.add('border-[#39FF14]', 'bg-[#39FF14]/10', 'text-[#0A0A0A]', 'dark:text-white');
+                target.classList.remove('border-gray-300', 'dark:border-gray-800', 'text-gray-500');
+                
+                currentMultiplier = parseFloat(target.getAttribute('data-multiplier'));
+                calculatePrice();
+            });
+        });
+
+        // Environment Radios Event
+        envRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                currentEnvCost = parseInt(e.target.value);
+                calculatePrice();
+            });
+        });
+
+        // Initial Calculation
+        calculatePrice();
+
+        // --- FAQ Logic ---
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const item = toggle.closest('.faq-item');
+                const content = item.querySelector('.faq-content');
+                const icon = toggle.querySelector('i');
+
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.faq-content').style.maxHeight = null;
+                        const otherIcon = otherItem.querySelector('i');
+                        otherIcon.classList.remove('fa-minus', 'text-[#39FF14]');
+                        otherIcon.classList.add('fa-plus', 'text-gray-500');
+                        otherItem.classList.remove('border-[#39FF14]', 'shadow-[0_0_10px_rgba(57,255,20,0.1)]');
+                        otherItem.classList.add('border-gray-200', 'dark:border-gray-800');
+                    }
+                });
+
+                // Toggle current item
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('fa-minus', 'text-[#39FF14]');
+                    icon.classList.add('fa-plus', 'text-gray-500');
+                    item.classList.remove('border-[#39FF14]', 'shadow-[0_0_10px_rgba(57,255,20,0.1)]');
+                    item.classList.add('border-gray-200', 'dark:border-gray-800');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.remove('fa-plus', 'text-gray-500');
+                    icon.classList.add('fa-minus', 'text-[#39FF14]');
+                    item.classList.remove('border-gray-200', 'dark:border-gray-800');
+                    item.classList.add('border-[#39FF14]', 'shadow-[0_0_10px_rgba(57,255,20,0.1)]');
+                }
+            });
+        });
+    });
+</script>
+<section class="py-24 bg-white dark:bg-[#0A0A0A] transition-colors duration-500 border-t border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-6 sm:px-12 lg:px-20">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-3 px-4 py-2 border border-gray-300 dark:border-[#39FF14]/40 bg-gray-50 dark:bg-[#111] backdrop-blur-md mb-6 shadow-sm dark:shadow-[0_0_15px_rgba(57,255,20,0.1)] transition-colors duration-500 rounded-sm">
+                <i class="fas fa-scale-balanced text-[#0A0A0A] dark:text-[#39FF14]"></i>
+                <span class="text-[#0A0A0A] dark:text-[#39FF14] font-black text-[10px] uppercase tracking-[0.3em]">The Superior Choice</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white transition-colors duration-500">
+                LumiNeon vs. <span class="text-gray-400 dark:text-gray-600">Glass Neon</span>
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
+                Why modern architectural-grade LED flex has completely revolutionized the custom lighting industry.
+            </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <div class="bg-[#F8F9FA] dark:bg-[#111] border-[3px] border-[#39FF14] rounded-sm p-8 md:p-10 relative shadow-[0_15px_40px_rgba(57,255,20,0.1)] transition-colors duration-500">
+                <div class="absolute -top-4 left-8 bg-[#39FF14] text-[#0A0A0A] px-4 py-1 font-black text-[10px] uppercase tracking-[0.3em] shadow-[0_0_10px_rgba(57,255,20,0.5)]">
+                    LumiNeon LED Flex
+                </div>
+                
+                <h3 class="text-2xl font-black uppercase tracking-widest text-[#0A0A0A] dark:text-white mb-8 mt-2 transition-colors">The Modern Standard</h3>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-check text-[#39FF14] text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors">Shatterproof</h4>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Built with flexible silicone and acrylic. Safe for high-traffic areas, kids, and pets.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-check text-[#39FF14] text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors">Energy Efficient</h4>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Consumes 80% less power. Safe 12V system keeps energy bills exceptionally low.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-check text-[#39FF14] text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors">Fully Controllable</h4>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Comes with a remote to adjust brightness, switch modes, or strobe to the beat.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-[#39FF14]/20 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-check text-[#39FF14] text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-[#0A0A0A] dark:text-white transition-colors">Affordable Pricing</h4>
+                            <p class="text-xs text-gray-500 mt-1 font-medium">Significantly lower upfront costs and virtually zero maintenance expenses over its 50k hour lifespan.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-[#050505] border border-gray-200 dark:border-gray-800 rounded-sm p-8 md:p-10 opacity-80 transition-colors duration-500">
+                <div class="inline-block border border-gray-300 dark:border-gray-700 text-gray-500 px-4 py-1 font-black text-[10px] uppercase tracking-[0.3em] mb-6 mt-[-16px] md:mt-0">
+                    Traditional Glass
+                </div>
+                
+                <h3 class="text-xl font-black uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-8 transition-colors">The Outdated Method</h3>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-times text-red-500 text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-gray-600 dark:text-gray-400 transition-colors">Highly Fragile</h4>
+                            <p class="text-xs text-gray-400 dark:text-gray-600 mt-1 font-medium">Made of brittle glass tubes filled with toxic gas. Extremely dangerous if broken.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-times text-red-500 text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-gray-600 dark:text-gray-400 transition-colors">High Voltage & Heat</h4>
+                            <p class="text-xs text-gray-400 dark:text-gray-600 mt-1 font-medium">Runs very hot, making it unsafe to touch. Emits an audible buzzing sound.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-times text-red-500 text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-gray-600 dark:text-gray-400 transition-colors">No Dimming</h4>
+                            <p class="text-xs text-gray-400 dark:text-gray-600 mt-1 font-medium">Always on at 100% brightness. Cannot be dimmed or controlled remotely.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fas fa-times text-red-500 text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-gray-600 dark:text-gray-400 transition-colors">Expensive Upkeep</h4>
+                            <p class="text-xs text-gray-400 dark:text-gray-600 mt-1 font-medium">Very expensive to purchase, requires specialized installers, and frequently needs gas refills.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="relative py-24 md:py-32 bg-[#0A0A0A] overflow-hidden border-t border-[#39FF14]/20">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-[#39FF14] opacity-[0.08] dark:opacity-10 blur-[120px] rounded-[100%]"></div>
+        
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQwIDBMMCAwTDAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg1NywgMjU1LCAyMCwgMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==')]"></div>
+    </div>
+
+    <div class="container mx-auto px-6 sm:px-12 lg:px-20 relative z-10 text-center">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white mb-6">
+            Ready to <span class="text-[#39FF14] drop-shadow-[0_0_20px_rgba(57,255,20,0.5)]">Light It Up?</span>
+        </h2>
+        <p class="text-gray-400 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+            Stop visualizing and start building. Design your custom piece instantly online, or connect with our master artisans to discuss your commercial project.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <a href="custom.html" class="w-full sm:w-auto px-10 py-5 font-black text-sm uppercase tracking-widest text-[#0A0A0A] bg-[#39FF14] hover:bg-[#32e612] shadow-[0_0_20px_rgba(57,255,20,0.4)] hover:shadow-[0_0_30px_rgba(57,255,20,0.6)] transition-all duration-300 rounded-sm group flex items-center justify-center">
+                Launch Studio Builder <i class="fas fa-bolt ml-3 transform group-hover:scale-125 transition-transform"></i>
+            </a>
+            
+            <a href="contact.html" class="w-full sm:w-auto px-10 py-5 font-black text-sm uppercase tracking-widest text-white border-[3px] border-white hover:border-[#39FF14] hover:text-[#39FF14] transition-colors duration-300 rounded-sm bg-black/50 backdrop-blur-sm">
+                Request A Quote
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+      <div id="footer"></div>
+
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

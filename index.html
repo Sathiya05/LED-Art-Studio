@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home 1</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="tailwind.js"></script>
+  <link rel="icon" href="images\logo.png">
+
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            scroll-behavior: smooth;
+        }
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body
+  class="bg-[#F8F9FA] text-[#0A0A0A] dark:bg-[#0A0A0A] dark:text-white pt-24 min-h-screen transition-colors duration-500 overflow-x-hidden">
+
+  <div id="navbar"></div>
+
+  <section
+    class="relative min-h-screen flex items-center bg-[url('https://media.istockphoto.com/id/2203032833/photo/smiling-photographer-hanging-photo-prints-in-darkroom.webp?a=1&b=1&s=612x612&w=0&k=20&c=Hcnu7YLYnta60bEeXZofNqi1q7jbs3DFGuJcHbJrsPA=')] bg-cover bg-center bg-no-repeat pt-18 pb-16 px-6 sm:px-10 overflow-hidden">
+
+    <div class="absolute inset-0 bg-[#0A0A0A]/65 z-0"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+
+        <div
+          class="flex flex-col items-center text-center md:items-center md:text-center lg:items-start lg:text-left rtl:lg:text-right">
+
+          <div
+            class="mt-16 inline-block border border-[#39FF14] text-[#39FF14] px-4 py-1.5 font-bold text-xs tracking-widest uppercase mb-8 bg-[#0A0A0A]/50 backdrop-blur-sm">
+            Premium Neon Artistry
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white leading-[1.1] mb-6">
+            Illuminate <br class="hidden sm:block">
+            Your <span class="text-[#39FF14] drop-shadow-[0_0_15px_rgba(57,255,20,0.4)]">Vision</span>
+          </h1>
+
+          <p class="text-gray-300 text-base md:text-lg font-medium max-w-2xl lg:max-w-xl mb-10 leading-relaxed">
+            Professional, high-contrast custom LED signs designed for maximum impact. We craft precise, striking
+            lighting solutions tailored for modern businesses and bold interiors.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center md:justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 rtl:space-x-reverse w-full sm:w-auto">
+            <a href="artworks.html"
+              class="w-full sm:w-auto px-8 py-4 font-black text-sm uppercase tracking-widest text-[#0A0A0A] bg-[#39FF14] border-2 border-[#39FF14] hover:bg-transparent hover:text-[#39FF14] hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-300 text-center">
+              Start Custom Design
+            </a>
+            <a href="shop.html"
+              class="w-full sm:w-auto px-8 py-4 font-bold text-sm uppercase tracking-widest text-white border-2 border-white hover:bg-white hover:text-[#0A0A0A] transition-colors duration-300 text-center backdrop-blur-sm bg-white/5">
+              View Collection
+            </a>
+          </div>
+
+        </div>
+
+        <div class="flex items-center justify-center w-full mt-4 lg:mt-0">
+
+          <div class="relative w-full max-w-md aspect-square group">
+
+            <div class="absolute inset-0 border-[3px] border-[#39FF14] overflow-hidden bg-[#0A0A0A]">
+              <img src="images\img1.webp" alt="Custom Neon Sign Display"
+                class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
+
+              <div class="absolute inset-0 shadow-[inset_0_0_40px_rgba(10,10,10,0.8)] pointer-events-none"></div>
+            </div>
+
+            <div class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.8)]"></div>
+            <div class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.8)]"></div>
+            <div class="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.8)]">
+            </div>
+            <div class="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.8)]">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="py-20 bg-white dark:bg-black transition-colors duration-500 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <p class="text-[#39FF14] font-bold uppercase tracking-widest text-sm mb-3">
+          Our Studio
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+          Crafting Light Into <span class="font-bold text-[#39FF14]">Art</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium">
+          Experience the perfect blend of creativity and technology to design stunning neon and LED artworks.
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div
+          class="group rounded-xl overflow-hidden bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 hover:border-[#39FF14] transition duration-300">
+          <img src="images\img2.avif" alt="Neon Design"
+            class="w-full h-44 object-cover brightness-90 contrast-110 group-hover:scale-105 transition duration-300">
+
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-black dark:text-white mb-3 group-hover:text-[#39FF14]">
+              Shape Your Light
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Design custom neon signs with real-time preview and dynamic glow control.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="group rounded-xl overflow-hidden bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 hover:border-[#39FF14] transition duration-300">
+          <img src="images\img3.webp" alt="Neon Colors"
+            class="w-full h-44 object-cover brightness-90 contrast-110 group-hover:scale-105 transition duration-300">
+
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-black dark:text-white mb-3 group-hover:text-[#39FF14]">
+              Vibrant Color Control
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Explore a spectrum of neon colors and create visually striking lighting effects.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="group rounded-xl overflow-hidden bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 hover:border-[#39FF14] transition duration-300">
+          <img src="images\img4.webp" alt="Neon Crafting"
+            class="w-full h-44 object-cover brightness-90 contrast-110 group-hover:scale-105 transition duration-300">
+
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-black dark:text-white mb-3 group-hover:text-[#39FF14]">
+              Handcrafted Neon LED
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Each piece is carefully crafted with precision and high-quality LED materials.
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+  <section class="py-24 bg-white dark:bg-[#0A0A0A] transition-colors duration-500 overflow-hidden relative">
+
+    <!-- Subtle Background Accents -->
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-[#39FF14]/5 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2">
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-[#39FF14]/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/2">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <div
+          class="inline-block px-4 py-1.5 border border-[#39FF14]/30 text-[#39FF14] text-[10px] font-black uppercase tracking-[0.3em] mb-4 bg-[#39FF14]/5">
+          Studio Features
+        </div>
+        <h2
+          class="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 uppercase tracking-tighter leading-none">
+          Everything You Need to <br class="hidden md:block"> Create <span
+            class="text-[#39FF14] drop-shadow-[0_0_10px_rgba(57,255,20,0.3)]">Neon Magic</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed">
+          Design, preview, and manage your custom neon signs with our professional-grade suite of intuitive tools.
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div
+          class="group relative p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_20px_50px_rgba(57,255,20,0.05)] transition-all duration-500">
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-2xl text-[#39FF14] mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-500">
+            <i class="fas fa-wand-magic-sparkles text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-tight">
+            Real-Time Preview
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">
+            Instantly visualize your neon sign with live editing tools and dynamic color adjustments on any background.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="group relative p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_20px_50px_rgba(57,255,20,0.05)] transition-all duration-500">
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-2xl  text-[#39FF14] mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-500">
+            <i class="fas fa-palette text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-tight">
+            Custom Curation
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">
+            Choose from a premium selection of artisanal fonts and high-intensity colors tailored for maximum visual
+            impact.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="group relative p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_20px_50px_rgba(57,255,20,0.05)] transition-all duration-500">
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-2xl  text-[#39FF14] mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-500">
+            <i class="fas fa-route text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-tight">
+            Global Tracking
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">
+            Total transparency from production to your doorstep with real-time tracking and logistics management.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="group relative p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_20px_50px_rgba(57,255,20,0.05)] transition-all duration-500">
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-2xl  text-[#39FF14] mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-500">
+            <i class="fas fa-microchip text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-tight">
+            Precision Craft
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">
+            Stay informed with high-frequency updates during the intricate hand-fabrication and testing phases.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div
+          class="group relative p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(57,255,20,0.05)] transition-all duration-500">
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-2xl  text-[#39FF14] mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-500">
+            <i class="fas fa-calendar-check text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-tight">
+            Smart Booking
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">
+            Seamlessly coordinate professional installation at your convenience through our integrated scheduling
+            system.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div
+          class="group relative p-8 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(57,255,20,0.1)] transition-all duration-500">
+          <div
+            class="w-14 h-14 flex items-center justify-center rounded-2xl  text-[#39FF14] mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-500">
+            <i class="fas fa-gauge-high text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-black dark:text-white mb-3 uppercase tracking-tight">
+            Elite Dashboard
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">
+            The ultimate control center for managing designs, approvals, and order history in one high-contrast
+            interface.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section class="py-20 bg-gray-50 dark:bg-[#050505] transition-colors duration-500 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- LEFT CONTENT -->
+        <div>
+          <p class="text-[#39FF14] uppercase font-bold tracking-widest text-sm mb-4">
+            Live Customization
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+            Design Your Neon Sign <br /> In Real-Time
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-400 mb-8">
+            Experiment with fonts, colors, and sizes instantly. Watch your neon sign
+            come to life as you customize it with our powerful live preview tool.
+          </p>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span class="w-2 h-2 bg-[#39FF14] rounded-full"></span>
+              Real-time text editing
+            </li>
+            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span class="w-2 h-2 bg-[#39FF14] rounded-full"></span>
+              Color & glow adjustments
+            </li>
+            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span class="w-2 h-2 bg-[#39FF14] rounded-full"></span>
+              Instant preview before ordering
+            </li>
+          </ul>
+
+          <a href="gallery.html"
+            class="inline-block px-8 py-3 rounded-lg bg-[#39FF14] text-black font-semibold  hover:scale-105 transition duration-300">
+            Start Designing
+          </a>
+        </div>
+
+        <!-- RIGHT UI MOCK -->
+        <div class="relative">
+
+          <!-- Glow Background -->
+          <div class="absolute -top-10 -right-10 w-72 h-72 bg-[#00FFC6] opacity-20 blur-3xl rounded-full"></div>
+
+          <!-- Tool Container -->
+          <div
+            class="relative bg-white dark:bg-[#0D0D0D] rounded-2xl shadow-xl border border-gray-200 dark:border-white/10 p-6">
+
+            <!-- Toolbar -->
+            <div class="flex flex-wrap gap-3 mb-6">
+              <button class="px-4 py-2 text-sm rounded-md bg-gray-100 dark:bg-[#111] text-black dark:text-white">
+                Text
+              </button>
+              <button class="px-4 py-2 text-sm rounded-md bg-gray-100 dark:bg-[#111] text-black dark:text-white">
+                Font
+              </button>
+              <button class="px-4 py-2 text-sm rounded-md bg-gray-100 dark:bg-[#111] text-black dark:text-white">
+                Color
+              </button>
+              <button class="px-4 py-2 text-sm rounded-md bg-gray-100 dark:bg-[#111] text-black dark:text-white">
+                Size
+              </button>
+            </div>
+
+            <!-- Preview Area -->
+            <div class="bg-black rounded-xl h-48 flex items-center justify-center border border-[#39FF14]/20">
+              <span class="text-[#39FF14] text-3xl font-bold tracking-widest drop-shadow-[0_0_15px_#39FF14]">
+                NEON ART
+              </span>
+            </div>
+
+            <!-- Controls -->
+            <div class="mt-6 grid grid-cols-2 gap-4">
+              <div class="p-3 rounded-lg bg-gray-100 dark:bg-[#111] text-sm text-gray-700 dark:text-gray-300">
+                Font: Modern
+              </div>
+              <div class="p-3 rounded-lg bg-gray-100 dark:bg-[#111] text-sm text-gray-700 dark:text-gray-300">
+                Color: Green
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="py-20 bg-white dark:bg-black transition-colors duration-500 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- LEFT IMAGE -->
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6" alt="Neon Materials"
+            class="w-full h-[350px] md:h-[450px] object-cover rounded-2xl brightness-90 contrast-110">
+
+          <!-- Glow effect -->
+          <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-[#39FF14] opacity-20 blur-2xl rounded-full"></div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div>
+          <p class="text-[#39FF14] font-bold uppercase tracking-widest text-sm mb-4">
+            Build Quality
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6">
+            Crafted with Premium Materials
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-400 mb-8">
+            Every neon sign is built using high-quality LED tubing and durable backing materials
+            to ensure long-lasting brightness, safety, and performance.
+          </p>
+
+          <!-- Features List -->
+          <div class="space-y-6">
+
+            <div class="flex gap-4 items-start">
+              <div class="w-3 h-3 mt-2 bg-[#39FF14] rounded-full"></div>
+              <div>
+                <h4 class="font-bold text-black dark:text-white">
+                  Energy Efficient LED
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                  Low power consumption with high brightness output.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="w-3 h-3 mt-2 bg-[#39FF14] rounded-full"></div>
+              <div>
+                <h4 class="font-bold text-black dark:text-white">
+                  Durable Acrylic Backing
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                  Strong and sleek support for a clean modern finish.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="w-3 h-3 mt-2 bg-[#39FF14] rounded-full"></div>
+              <div>
+                <h4 class="font-bold text-black dark:text-white">
+                  Safe & Long-Lasting
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                  Built for durability with minimal heat and maximum safety.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section class="py-24 bg-gray-50 dark:bg-[#0A0A0A] transition-colors duration-500 relative overflow-hidden">
+
+    <div
+      class="absolute top-1/2 left-0 w-80 h-80 bg-[#39FF14]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2">
+    </div>
+    <div
+      class="absolute top-1/2 right-0 w-80 h-80 bg-[#39FF14]/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div
+          class="inline-block px-4 py-1.5 border border-[#39FF14]/30 text-[#39FF14] text-[10px] font-bold uppercase tracking-[0.3em] mb-4 bg-[#39FF14]/5">
+          Client Stories
+        </div>
+        <h2
+          class="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 uppercase tracking-tighter leading-none">
+          Lighting Up Spaces, <br class="hidden md:block"> One <span
+            class="text-[#39FF14] drop-shadow-[0_0_10px_rgba(57,255,20,0.3)]">Vision</span> at a Time
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed">
+          Discover how our custom neon creations have transformed commercial spaces and private interiors across the
+          globe.
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div
+          class="p-8 rounded-3xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 group">
+          <div class="text-[#39FF14] mb-6 text-3xl opacity-40 group-hover:opacity-100 transition-opacity">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mb-8 font-medium  leading-relaxed">
+            “Loved the real-time preview tool. What I designed is exactly what I received. Super smooth experience from
+            design to delivery!”
+          </p>
+          <div class="flex items-center gap-4 border-t border-black/5 dark:border-white/5 pt-6">
+            <img src="images\pro g1.avif"
+              class="w-14 h-14 rounded-2xl object-cover border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)]" />
+            <div>
+              <h4 class="font-black text-bold dark:text-white uppercase tracking-tight">Ananya R</h4>
+              <span class="text-[#39FF14] text-[10px] font-bold uppercase tracking-widest">Interior Designer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="p-8 rounded-3xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 group">
+          <div class="text-[#39FF14] mb-6 text-3xl opacity-40 group-hover:opacity-100 transition-opacity">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mb-8 font-medium  leading-relaxed">
+            “Loved the real-time preview tool. What I designed is exactly what I received. Super smooth experience from
+            design to delivery!”
+          </p>
+          <div class="flex items-center gap-4 border-t border-black/5 dark:border-white/5 pt-6">
+            <img src="images\pro b1.avif"
+              class="w-14 h-14 rounded-2xl object-cover border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)]" />
+            <div>
+              <h4 class="font-bold text-black dark:text-white uppercase tracking-tight">Rahul K</h4>
+              <span class="text-[#39FF14] text-[10px] font-bold uppercase tracking-widest">Cafe Owner</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="p-8 rounded-3xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 hover:border-[#39FF14]/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 group">
+          <div class="text-[#39FF14] mb-6 text-3xl opacity-40 group-hover:opacity-100 transition-opacity">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mb-8 font-medium  leading-relaxed">
+            “Loved the real-time preview tool. What I designed is exactly what I received. Super smooth experience from
+            design to delivery!”
+          </p>
+          <div class="flex items-center gap-4 border-t border-black/5 dark:border-white/5 pt-6">
+            <img src="images\pro g2.avif"
+              class="w-14 h-14 rounded-2xl object-cover border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)]" />
+            <div>
+              <h4 class="font-bold text-black dark:text-white uppercase tracking-tight">Meera S</h4>
+              <span class="text-[#39FF14] text-[10px] font-bold uppercase tracking-widest">Boutique Owner</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section class="py-24 bg-black relative overflow-hidden">
+
+    <!-- Glow Background -->
+    <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+      <div class="w-96 h-96 bg-[#39FF14] opacity-20 blur-3xl rounded-full"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+
+      <!-- Heading -->
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        Bring Your Vision <br class="hidden md:block" />
+        <span class="text-[#39FF14] ">
+          Into Neon Light
+        </span>
+      </h2>
+
+      <!-- Subtext -->
+      <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+        Design, customize, and create your own neon masterpiece with our powerful studio tools.
+        Start building something that truly stands out.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <!-- Primary CTA -->
+        <a href="artworks.html"
+          class="px-10 py-4 rounded-lg bg-[#39FF14] text-black font-bold  hover:scale-105 transition duration-300">
+          Start Designing
+        </a>
+
+        <!-- Secondary CTA -->
+        <a href="gallery.html"
+          class="px-10 py-4 rounded-lg border border-[#39FF14] text-[#39FF14] font-bold hover:bg-[#39FF14] hover:text-black transition duration-300">
+          View Gallery
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <div id="footer"></div>
+
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Access | LumiNeon</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                    },
+                    colors: {
+                        laser: '#39FF14',
+                        darkbg: '#0A0A0A',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+        
+        /* High-end underline inputs */
+        .input-line {
+            border: none;
+            border-bottom: 2px solid #E5E7EB;
+            border-radius: 0;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .dark .input-line {
+            border-bottom: 2px solid #333;
+        }
+        .input-line:focus {
+            outline: none;
+            border-bottom: 2px solid #39FF14;
+            box-shadow: 0 10px 10px -10px rgba(57,255,20,0.2);
+        }
+        
+        /* Autofill reset */
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Animated Grid Background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+        }
+        .dark .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] dark:bg-[#050505] text-[#0A0A0A] dark:text-white min-h-screen antialiased selection:bg-laser selection:text-black relative transition-colors duration-500 overflow-hidden">
+
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="bg-grid absolute inset-0 w-full h-full"></div>
+        <div class="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] bg-[#39FF14]/10 dark:bg-[#39FF14]/10 rounded-full blur-[120px] animate-[spin_15s_linear_infinite] origin-bottom-right"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#39FF14]/10 dark:bg-[#39FF14]/5 rounded-full blur-[100px] animate-[spin_20s_linear_infinite_reverse] origin-top-left"></div>
+    </div>
+
+    <header class="absolute top-0 left-0 w-full px-4 sm:px-6 py-4 lg:px-12 z-50 flex items-center justify-between ">
+        
+       <a href="index.html" class="flex items-center space-x-3 group shrink-0">
+        <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-black dark:bg-transparent border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] group-hover:scale-105 transition-all duration-500">
+            <i class="fas fa-bolt text-[#39FF14] text-xl transform group-hover:rotate-12 transition-transform duration-500"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-bold tracking-tighter uppercase text-black dark:text-white leading-none">
+            Lumi<span class="text-[#39FF14]">Neon</span>
+          </span>
+          <span class="text-[8px] font-bold tracking-[0.3em] uppercase text-black/40 dark:text-white/40">Studio Excellence</span>
+        </div>
+      </a>
+
+        <div class="flex items-center gap-1 md:gap-2 bg-white/80 dark:bg-[#111]/80 backdrop-blur-md p-1 rounded-sm border border-gray-200 dark:border-gray-800 shadow-sm pointer-events-auto">
+            <button id="rtlToggle" class="w-8 h-7 flex items-center justify-center rounded-sm text-[10px] font-black tracking-widest text-gray-500 dark:text-gray-400 hover:text-laser dark:hover:text-laser transition-colors">
+                <span class="rtl-text">RTL</span>
+            </button>
+            <div class="w-px h-3 bg-gray-300 dark:bg-gray-700"></div>
+            <button id="darkToggle" class="w-8 h-7 flex items-center justify-center rounded-sm text-gray-500 dark:text-gray-400 hover:text-laser dark:hover:text-laser transition-colors">
+                <i id="themeIcon" class="fas fa-moon text-xs"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex min-h-screen items-center justify-center p-4">
+        
+        <div class="w-full max-w-lg bg-white/90 dark:bg-[#0A0A0A]/90 backdrop-blur-2xl border-l-4 border-laser border-y border-r border-y-gray-200 border-r-gray-200 dark:border-y-gray-800 dark:border-r-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-5 sm:p-8 relative transition-colors duration-500">
+            
+            <div class="absolute top-4 right-4 flex gap-1">
+                <div class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-laser rounded-full shadow-[0_0_8px_#39FF14]"></div>
+            </div>
+
+            <div class="mb-4 md:mb-6">
+                <h1 class="text-xl md:text-2xl font-bold uppercase tracking-tighter text-[#0A0A0A] dark:text-white mb-1">Create Profile</h1>
+                <p class="text-gray-500 dark:text-gray-400 text-[9px] font-black tracking-[0.2em] uppercase">Join the elite neon design studio</p>
+            </div>
+
+            <form id="signupForm" class="space-y-3.5 md:space-y-4">
+                
+                <div class="relative group">
+                    <label class="block text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-1 group-focus-within:text-laser transition-colors">Full Name</label>
+                    <div class="relative flex items-center">
+                        <i class="fas fa-user absolute left-0 text-gray-400 group-focus-within:text-laser transition-colors"></i>
+                        <input type="text" required placeholder="Marcus" class="input-line w-full pl-8 py-1.5 text-[#0A0A0A] dark:text-white font-bold text-sm placeholder-gray-300 dark:placeholder-gray-700">
+                    </div>
+                </div>
+
+
+                <div class="relative group">
+                    <label class="block text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-1 group-focus-within:text-laser transition-colors">Email Address</label>
+                    <div class="relative flex items-center">
+                        <i class="fas fa-envelope absolute left-0 text-gray-400 group-focus-within:text-laser transition-colors"></i>
+                        <input type="email" required placeholder="marcus@studio.com" class="input-line w-full pl-8 py-1.5 text-[#0A0A0A] dark:text-white font-bold text-sm placeholder-gray-300 dark:placeholder-gray-700">
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <label class="block text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-1 group-focus-within:text-laser transition-colors">Password</label>
+                    <div class="relative flex items-center">
+                        <i class="fas fa-lock absolute left-0 text-gray-400 group-focus-within:text-laser transition-colors"></i>
+                        <input type="password" id="passwordInput" required placeholder="••••••••" class="input-line w-full pl-8 pr-10 py-1.5 text-[#0A0A0A] dark:text-white font-bold text-sm placeholder-gray-300 dark:placeholder-gray-700">
+                        <button type="button" id="togglePassword" class="absolute right-0 text-gray-400 hover:text-laser transition-colors focus:outline-none">
+                            <i class="fas fa-eye text-xs" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <label class="block text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-1 group-focus-within:text-laser transition-colors">Confirm Password</label>
+                    <div class="relative flex items-center">
+                        <i class="fas fa-lock absolute left-0 text-gray-400 group-focus-within:text-laser transition-colors"></i>
+                        <input type="password" id="confirmPasswordInput" required placeholder="••••••••" class="input-line w-full pl-8 pr-10 py-1.5 text-[#0A0A0A] dark:text-white font-bold text-sm placeholder-gray-300 dark:placeholder-gray-700">
+                        <button type="button" id="toggleConfirmPassword" class="absolute right-0 text-gray-400 hover:text-laser transition-colors focus:outline-none">
+                            <i class="fas fa-eye text-xs" id="confirmEyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center pt-2">
+                    <label class="flex items-center cursor-pointer group">
+                        <div class="relative flex items-center justify-center shrink-0">
+                            <input type="checkbox" required class="sr-only peer">
+                            <div class="w-5 h-5 md:w-4 md:h-4 border-2 border-gray-300 dark:border-gray-700 rounded-sm peer-checked:bg-laser peer-checked:border-laser transition-colors flex items-center justify-center group-hover:border-laser">
+                                <i class="fas fa-check text-black text-[10px] opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                            </div>
+                        </div>
+                        <span class="ml-3 text-xs md:text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest group-hover:text-[#0A0A0A] dark:group-hover:text-white transition-colors">
+                            I agree to the <a href="#" class="text-laser hover:text-[#32e612] border-b border-transparent hover:border-laser pb-0.5 transition-colors">Terms of Service</a> & <a href="#" class="text-laser hover:text-[#32e612] border-b border-transparent hover:border-laser pb-0.5 transition-colors">Privacy Policy</a>
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 mt-4 font-black uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] transition-all duration-300 rounded-sm flex items-center justify-between px-6 group">
+                    <span class="text-xs">Signup</span>
+                    <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-2"></i>
+                </button>
+
+                <!-- Social Signup Section -->
+                <div class="mt-6">
+                    <div class="relative flex items-center mb-5">
+                        <div class="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+                        <span class="flex-shrink mx-4 text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">Or start with</span>
+                        <div class="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" class="flex items-center justify-center gap-2 p-2.5 border border-gray-200 dark:border-gray-800 rounded-sm hover:border-laser dark:hover:border-laser hover:bg-gray-50 dark:hover:bg-[#111] transition-all duration-300 group">
+                            <i class="fab fa-google text-gray-400 group-hover:text-laser transition-colors text-xs"></i>
+                            <span class="text-[9px] font-black uppercase tracking-widest text-gray-500 dark:text-gray-400 group-hover:text-[#0A0A0A] dark:group-hover:text-white transition-colors">Google</span>
+                        </button>
+                        <button type="button" class="flex items-center justify-center gap-2 p-2.5 border border-gray-200 dark:border-gray-800 rounded-sm hover:border-laser dark:hover:border-laser hover:bg-gray-50 dark:hover:bg-[#111] transition-all duration-300 group">
+                            <i class="fab fa-apple text-gray-400 group-hover:text-laser text-sm transition-colors"></i>
+                            <span class="text-[9px] font-black uppercase tracking-widest text-gray-500 dark:text-gray-400 group-hover:text-[#0A0A0A] dark:group-hover:text-white transition-colors">Apple</span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest">
+                    Already a member? 
+                    <a href="login.html" class="text-laser hover:text-[#32e612] transition-colors ml-1 border-b border-laser/30 hover:border-laser pb-0.5">Login instead</a>
+                </p>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        /* ===============================
+           PASSWORD VISIBILITY TOGGLES
+        ================================ */
+        function setupPasswordToggle(inputId, toggleId, iconId) {
+            const input = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            const icon = document.getElementById(iconId);
+
+            toggle.addEventListener('click', function () {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                
+                if (type === 'password') {
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                } else {
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                }
+            });
+        }
+
+        setupPasswordToggle('passwordInput', 'togglePassword', 'eyeIcon');
+        setupPasswordToggle('confirmPasswordInput', 'toggleConfirmPassword', 'confirmEyeIcon');
+
+        /* ===============================
+           THEME & RTL LOGIC
+        ================================ */
+        const htmlElement = document.documentElement;
+        const darkToggle = document.getElementById("darkToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const rtlToggle = document.getElementById("rtlToggle");
+
+        // Defaults to light mode if nothing is set
+        function applyTheme() {
+            let theme = localStorage.getItem('LumiNeon-dark');
+            // If strictly 'dark' is saved, apply dark. Otherwise, light mode.
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                if (themeIcon) themeIcon.className = 'fas fa-sun transition-transform';
+            } else {
+                htmlElement.classList.remove('dark');
+                if (themeIcon) themeIcon.className = 'fas fa-moon transition-transform';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('LumiNeon-dark', isDark ? 'dark' : 'light');
+            applyTheme();
+        }
+
+        if (darkToggle) darkToggle.addEventListener('click', toggleTheme);
+
+        function toggleRTL() {
+            const currentDir = htmlElement.getAttribute("dir");
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", newDir);
+            
+            const rtlTextSpan = rtlToggle?.querySelector('.rtl-text');
+            if(rtlTextSpan) rtlTextSpan.textContent = newDir === "rtl" ? "LTR" : "RTL";
+            
+            localStorage.setItem("LumiNeon-rtl", newDir);
+        }
+
+        if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+
+        // Initialization on Load
+        applyTheme();
+        const savedRTL = localStorage.getItem("LumiNeon-rtl");
+        if (savedRTL) {
+            htmlElement.setAttribute("dir", savedRTL);
+            const rtlTextSpan = rtlToggle?.querySelector('.rtl-text');
+            if(rtlTextSpan) rtlTextSpan.textContent = savedRTL === "rtl" ? "LTR" : "RTL";
+        }
+
+        // Form Submit Mock Animation
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const pass = document.getElementById('passwordInput').value;
+            const confirm = document.getElementById('confirmPasswordInput').value;
+
+            if (pass !== confirm) {
+                alert("Passwords do not match. Please verify.");
+                return;
+            }
+
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span>Processing...</span><i class="fas fa-circle-notch fa-spin"></i>';
+            
+            setTimeout(() => {
+                window.location.href = 'user.html'; // Redirect to user dashboard
+            }, 1200);
+        });
+    </script>
+</body>
+</html>

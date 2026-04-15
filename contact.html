@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | LumiNeon Studio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                    },
+                    colors: {
+                        laser: '#39FF14',
+                        darkbg: '#0A0A0A',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* Smooth transitions */
+        * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }
+        
+        /* Grayscale hover effects for locations */
+        .location-img { filter: grayscale(100%); transition: all 0.7s ease; }
+        .group:hover .location-img { filter: grayscale(0%); transform: scale(1.05); }
+        
+        /* Custom input autofill styles */
+        input:-webkit-autofill, textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #f9fafb inset !important;
+            -webkit-text-fill-color: #0A0A0A !important;
+        }
+        .dark input:-webkit-autofill, .dark textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #0A0A0A inset !important;
+            -webkit-text-fill-color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] dark:bg-[#0A0A0A] text-[#0A0A0A] dark:text-white pt-20 min-h-screen antialiased selection:bg-laser selection:text-black transition-colors duration-500">
+
+    <div id="navbar"></div>
+<section class="relative min-h-[100vh] flex items-center justify-center bg-[#0A0A0A] pt-20 pb-16 overflow-hidden transition-colors duration-500 mt-0 border-b border-gray-800">
+  
+  <!-- Cinematic Background Layer -->
+  <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+    <img src="images\bg1.webp" 
+         alt="Neon Studio Workshop" 
+         class="w-full h-full object-cover opacity-40 scale-105 transition-transform duration-[20s] hover:scale-110" />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0 "></div>
+  </div>
+
+  <!-- Decorative Glow Blobs -->
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#39FF14]/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#39FF14]/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3"></div>
+
+  <div class="container mx-auto px-6 lg:px-12 relative z-10">
+    <div class="flex flex-col items-center text-center">
+      
+      <div class="inline-flex items-center gap-3 px-5 py-2 border border-[#39FF14]/40 text-[#39FF14] font-bold text-[10px] tracking-[0.3em] uppercase mb-10 bg-[#0A0A0A]/80 backdrop-blur-md shadow-[0_0_20px_rgba(57,255,20,0.1)] rounded-sm">
+          <span class="w-2 h-2 bg-[#39FF14] rounded-full animate-pulse shadow-[0_0_10px_#39FF14]"></span>
+          Studio Transmission Link Active
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-[1] mb-8 max-w-5xl">
+        Connect With <br class="hidden md:block"> 
+        <span class="text-[#39FF14] drop-shadow-[0_0_20px_rgba(57,255,20,0.5)]">The Studio</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg md:text-xl font-medium max-w-3xl mb-12 leading-relaxed">
+        Whether you have a bold idea for a custom piece, need support with an existing order, or want to discuss a large-scale commercial installation, our team is ready to illuminate your vision.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+        <a href="contact.html" class="w-full sm:w-auto px-10 py-5 font-bold text-sm uppercase tracking-widest text-[#0A0A0A] bg-[#39FF14] hover:bg-[#32e612] shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-all duration-300 text-center rounded-sm hover:-translate-y-1">
+          Initialize Chat
+        </a>
+        <a href="tel:+18005550199" class="w-full sm:w-auto px-10 py-5 font-bold text-sm uppercase tracking-widest text-white border-2 border-white/20 hover:border-[#39FF14] hover:text-[#39FF14] transition-all duration-300 text-center rounded-sm bg-white/5 backdrop-blur-sm flex items-center justify-center">
+          <i class="fas fa-phone mr-3 text-[#39FF14]"></i> Dispatch Call
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section class="py-24 bg-[#F8F9FA] dark:bg-[#0A0A0A] relative z-20 -mt-10 md:-mt-12 lg:-mt-20 px-4 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Client Support -->
+                <div class="group bg-white dark:bg-[#050505] p-8 md:p-10 lg:p-12 border border-gray-100 hover:translate-y-2 dark:border-laser/20 hover:border-laser/50 transition-all duration-500 rounded-sm text-center shadow-xl lg:scale-105 relative z-10">
+                    <div class="w-12 h-12 mx-auto mb-8 flex items-center justify-center text-laser group-hover:text-laser transition-colors duration-300">
+                        <i class="far fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-laser mb-4">Support Channels</h3>
+                    <h4 class="text-xl font-bold text-[#0A0A0A] dark:text-white mb-6">Client Experience</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">Dedicated assistance for order diagnostics, installation guidance, and warranty certifications.</p>
+                    <a href="mailto:support@lumineon.com" class="text-sm font-bold text-[#0A0A0A] dark:text-laser hover:opacity-70 transition-opacity">support@lumineon.com</a>
+                </div>
+
+                <!-- Design Studio -->
+                <div class="group bg-white dark:bg-[#050505] p-8 md:p-10 lg:p-12 border border-gray-100 hover:translate-y-2 dark:border-laser/20 hover:border-laser/50 transition-all duration-500 rounded-sm text-center shadow-xl lg:scale-105 relative z-10">
+                    <div class="w-12 h-12 mx-auto mb-8 flex items-center justify-center text-laser">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-laser mb-4">Live Frequency</h3>
+                    <h4 class="text-xl font-bold text-[#0A0A0A] dark:text-white mb-6">Artesian Studio</h4>
+                    <p class="text-gray-500 dark:text-gray-300 text-sm leading-relaxed mb-8">Direct line connection with our lead engineers and neon artisans for custom project architecture.</p>
+                    <a href="tel:+18005550199" class="text-sm font-bold text-[#0A0A0A] dark:text-laser hover:opacity-70 transition-opacity">+1 (800) 555-NEON</a>
+                </div>
+
+                <!-- B2B & Trade -->
+                <div class="group bg-white dark:bg-[#050505] p-12 border border-gray-100 hover:translate-y-2 dark:border-laser/20 hover:border-laser/50 transition-all duration-500 rounded-sm text-center shadow-xl lg:scale-105 relative z-10">
+                    <div class="w-12 h-12 mx-auto mb-8 flex items-center justify-center text-laser group-hover:text-laser transition-colors duration-300">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.3em] text-laser mb-4">Corporate Links</h3>
+                    <h4 class="text-xl font-bold text-[#0A0A0A] dark:text-white mb-6">Trade & B2B</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">Architectural scale volume, white-label services, and international distribution logistics.</p>
+                    <a href="mailto:trade@lumineon.com" class="text-sm font-bold text-[#0A0A0A] dark:text-laser hover:opacity-70 transition-opacity">trade@lumineon.com</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white dark:bg-[#050505]  relative overflow-hidden transition-colors duration-500">
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-sm  overflow-hidden flex flex-col lg:flex-row transition-colors duration-500">
+                
+                <div class="lg:w-2/5 relative p-10 lg:p-16 flex flex-col justify-between overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-500">
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwIDBMMCAwTDAgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=')] opacity-10 dark:opacity-30 pointer-events-none"></div>
+                    
+                    <div class="relative z-10 mb-12">
+                        <h3 class="font-black uppercase tracking-tighter text-3xl mb-4 text-[#0A0A0A] dark:text-white">Initialize <br><span class="text-laser">Transmission</span></h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed">Fill out the form with your project details. If you are submitting a custom logo request, please use the Studio Builder tool instead.</p>
+                    </div>
+
+                    <div class="relative z-10 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-clock text-laser"></i>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-widest text-[#0A0A0A] dark:text-white">Studio Hours</h4>
+                                <p class="text-gray-500 text-xs">Mon - Fri, 9:00 AM - 6:00 PM EST</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-bolt text-laser"></i>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-widest text-[#0A0A0A] dark:text-white">Response Time</h4>
+                                <p class="text-gray-500 text-xs">Within 24 business hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-3/5 p-8 md:p-12 lg:p-16 bg-white dark:bg-[#111] transition-colors duration-500">
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative group">
+                                <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-2 group-focus-within:text-laser transition-colors">First Name [REQ]</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-sm focus:outline-none focus:border-laser focus:shadow-[0_0_10px_rgba(57,255,20,0.1)] transition-all rounded-sm">
+                            </div>
+                            <div class="relative group">
+                                <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-2 group-focus-within:text-laser transition-colors">Last Name [REQ]</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-sm focus:outline-none focus:border-laser focus:shadow-[0_0_10px_rgba(57,255,20,0.1)] transition-all rounded-sm">
+                            </div>
+                        </div>
+                        
+                        <div class="relative group">
+                            <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-2 group-focus-within:text-laser transition-colors">Email Address [REQ]</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-sm focus:outline-none focus:border-laser focus:shadow-[0_0_10px_rgba(57,255,20,0.1)] transition-all rounded-sm">
+                        </div>
+
+                       
+
+                        <div class="relative group">
+                            <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-2 group-focus-within:text-laser transition-colors">Transmission Data [REQ]</label>
+                            <textarea rows="5" required class="w-full px-4 py-3 bg-gray-50 dark:bg-[#0A0A0A] border border-gray-300 dark:border-gray-800 text-[#0A0A0A] dark:text-white font-bold text-sm focus:outline-none focus:border-laser focus:shadow-[0_0_10px_rgba(57,255,20,0.1)] transition-all rounded-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 font-bold uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] shadow-[0_0_15px_rgba(57,255,20,0.3)] hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] transition-all duration-300 rounded-sm">
+                            Transmit Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+       <section class="py-24 bg-[#F8F9FA] dark:bg-[#0A0A0A] transition-colors duration-500">
+        <div class="container mx-auto px-6 lg:px-12">
+            
+            <div class="max-w-3xl mx-auto text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white mb-6">
+                    Studio Locations
+                </h2>
+                <div class="w-20 h-1 bg-laser mx-auto mb-8"></div>
+                <p class="text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
+                    Experience our craftsmanship in person. Visit one of our global showrooms to find inspiration for your next masterpiece.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Los Angeles -->
+                <div class="group">
+                    <div class="aspect-[4/3] overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 mb-8">
+                        <img src="images\los.avif" alt="Los Angeles Studio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="text-center md:text-left ml-5">
+                        <h3 class="text-2xl font-bold text-[#0A0A0A] dark:text-white mb-3  uppercase tracking-tight">Los Angeles</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-6 leading-relaxed"> HQ & Main Fabrication Lab<br>Arts District, Los Angeles, CA 913, USA</p>
+                        <a href="#" class="text-xs font-black uppercase tracking-[0.2em] text-[#0A0A0A] dark:text-laser hover:opacity-70 transition-all flex items-center justify-center md:justify-start gap-2">
+                            Get Directions <i class="fas fa-chevron-right text-[8px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- London -->
+                <div class="group">
+                    <div class="aspect-[4/3] overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 mb-8">
+                        <img src="images\london.avif" alt="London Studio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="text-center md:text-left ml-5">
+                        <h3 class="text-2xl font-bold text-[#0A0A0A] dark:text-white mb-3 uppercase tracking-tight">London</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-6 leading-relaxed">HQ & Main Fabrication Lab<br>Arts District, London, CA 913, USA</p>
+                        <a href="#" class="text-xs font-black uppercase tracking-[0.2em] text-[#0A0A0A] dark:text-laser hover:opacity-70 transition-all flex items-center justify-center md:justify-start gap-2">
+                            Get Directions <i class="fas fa-chevron-right text-[8px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sydney -->
+                <div class="group">
+                    <div class="aspect-[4/3] overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 mb-8">
+                        <img src="images\syd.avif" alt="Sydney Studio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="text-center md:text-left ml-5">
+                        <h3 class="text-2xl font-bold text-[#0A0A0A] dark:text-white mb-3 uppercase tracking-tight">Sydney</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-6 leading-relaxed">HQ & Main Fabrication Lab<br>Arts District, Sydney, CA 913, USA</p>
+                        <a href="contact.html" class="text-xs font-black uppercase tracking-[0.2em] text-[#0A0A0A] dark:text-laser hover:opacity-70 transition-all flex items-center justify-center md:justify-start gap-2">
+                            Get Directions <i class="fas fa-chevron-right text-[8px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white dark:bg-[#111] border-t border-gray-200 dark:border-gray-800 transition-colors duration-500">
+        <div class="container mx-auto px-6 lg:px-12">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-laser font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Knowledge Base</span>
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0A0A0A] dark:text-white">
+                    Frequently Asked <span class="text-laser">Questions</span>
+                </h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col gap-4">
+                
+                <div class="faq-item group bg-gray-50 dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden">
+                    <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                            Are the signs safe for indoor use?
+                        </h4>
+                        <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 mt-2">
+                            Absolutely. Unlike traditional glass neon which uses high voltage and fragile glass, our LED neon is made from durable, shatter-resistant silicone and runs on a safe 12V power supply. They remain cool to the touch even after 24 hours of continuous use.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item group bg-gray-50 dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden">
+                    <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                            How do I mount my custom sign?
+                        </h4>
+                        <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 mt-2">
+                            Every sign comes with pre-drilled holes in the acrylic backing and a complete mounting kit (including stand-off screws and suspension wires). It's as easy as hanging a heavy picture frame. Just mount, plug into a standard outlet, and glow.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item group bg-gray-50 dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden">
+                    <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                            What happens if my sign breaks during shipping?
+                        </h4>
+                        <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 mt-2">
+                            All our shipments are fully insured. Because we use flexible LED technology rather than glass, transit breakages are incredibly rare. However, if your sign arrives damaged, contact us within 48 hours with photos, and we will expedite a free replacement.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item group bg-gray-50 dark:bg-[#0A0A0A] rounded-sm border border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden">
+                    <button class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-[#0A0A0A] dark:text-white group-hover:text-laser transition-colors duration-300">
+                            Can you make a sign for outdoor use?
+                        </h4>
+                        <i class="fas fa-plus text-sm text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-8 pb-6 pt-0 text-gray-600 dark:text-gray-400 text-sm font-medium leading-relaxed border-t border-gray-200 dark:border-gray-800 mt-2">
+                            Yes! Standard signs are designed for indoor use, but we can completely weather-seal your design (IP67 rating) for permanent outdoor installation for a small upgrade fee. Just specify "Outdoor Use" when requesting your quote.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden bg-[#0A0A0A] text-white transition-colors duration-500">
+        <!-- Cinematic Background Glow -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-laser/10 rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-laser/10 border border-laser/30 rounded-full flex items-center justify-center mb-10 shadow-[0_0_20px_rgba(57,255,20,0.1)]">
+                    <i class="fas fa-bolt text-3xl text-laser"></i>
+                </div>
+                
+                <h2 class="text-3xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tighter mb-8 max-w-4xl leading-none">
+                    Light Up Your <br> <span class="text-laser drop-shadow-[0_0_15px_rgba(57,255,20,0.5)]">Space</span>
+                </h2>
+                
+                <p class="max-w-xl mx-auto text-gray-400 font-medium text-lg md:text-xl mb-12 leading-relaxed">
+                    Ready to turn your vision into neon reality? 
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+                    <a href="pricing.html" class="w-full sm:w-auto px-12 py-5 rounded-sm font-black uppercase tracking-widest text-[#0A0A0A] bg-laser hover:bg-[#32e612] transition-all duration-300 shadow-[0_0_25px_rgba(57,255,20,0.4)] hover:-translate-y-1">
+                        Launch Builder
+                    </a>
+                    <a href="shop.html" class="w-full sm:w-auto px-12 py-5 rounded-sm font-black uppercase tracking-widest text-white border-2 border-white/20 hover:border-laser hover:text-laser dark:bg-white/5 backdrop-blur-sm transition-all duration-300">
+                        Shop Pre-Made
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const item = toggle.closest('.faq-item');
+                    const content = item.querySelector('.faq-content');
+                    const icon = toggle.querySelector('i');
+
+                    // Close other items
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.faq-content').style.maxHeight = null;
+                            const otherIcon = otherItem.querySelector('i');
+                            otherIcon.classList.remove('fa-minus', 'text-laser');
+                            otherIcon.classList.add('fa-plus', 'text-gray-500');
+                            otherItem.classList.remove('border-laser', 'shadow-[0_0_10px_rgba(57,255,20,0.1)]');
+                            otherItem.classList.add('border-gray-200', 'dark:border-gray-800');
+                        }
+                    });
+
+                    // Toggle current item
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('fa-minus', 'text-laser');
+                        icon.classList.add('fa-plus', 'text-gray-500');
+                        item.classList.remove('border-laser', 'shadow-[0_0_10px_rgba(57,255,20,0.1)]');
+                        item.classList.add('border-gray-200', 'dark:border-gray-800');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.remove('fa-plus', 'text-gray-500');
+                        icon.classList.add('fa-minus', 'text-laser');
+                        item.classList.remove('border-gray-200', 'dark:border-gray-800');
+                        item.classList.add('border-laser', 'shadow-[0_0_10px_rgba(57,255,20,0.1)]');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div id="footer"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
