@@ -54,28 +54,27 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
 
-      <div class="hidden xl:flex items-center space-x-4 shrink-0">
-        
-        <div class="flex items-center space-x-1.5">
-          <button id="rtlToggle" class="w-9 h-9 rounded-full bg-black/5 dark:bg-white/5 border border-transparent hover:border-[#39FF14]/30 transition-all flex items-center justify-center group text-[9px] font-black text-black/60 dark:text-white/60">
-            <span class="rtl-text transition-all group-hover:text-black dark:group-hover:text-white">RTL</span>
-          </button>
-          <button id="darkToggle" class="w-9 h-9 rounded-full bg-black/5 dark:bg-white/5 border border-transparent hover:border-[#39FF14]/30 transition-all flex items-center justify-center group">
-            <i id="darkIcon" class="fas fa-moon text-[13px] text-black/60 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-all"></i>
-          </button>
-        </div>
+<div class="hidden xl:flex items-center gap-4 shrink-0">
+  
+  <div class="flex items-center gap-1.5">
+    <button id="rtlToggle" class="w-9 h-9 rounded-full bg-black/5 dark:bg-white/5 border border-transparent hover:border-[#39FF14]/30 transition-all flex items-center justify-center group text-[9px] font-black text-black/60 dark:text-white/60">
+      <span class="rtl-text transition-all group-hover:text-black dark:group-hover:text-white">RTL</span>
+    </button>
+    <button id="darkToggle" class="w-9 h-9 rounded-full bg-black/5 dark:bg-white/5 border border-transparent hover:border-[#39FF14]/30 transition-all flex items-center justify-center group">
+      <i id="darkIcon" class="fas fa-moon text-[13px] text-black/60 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-all"></i>
+    </button>
+  </div>
 
-        <div class="flex items-center space-x-2 border-l border-black/10 dark:border-white/10 pl-4">
-          <a href="login.html" class="px-5 py-2.5 font-bold text-[11px] uppercase tracking-widest text-white bg-black rounded-full hover:-translate-y-0.5 transition-all">
-            Login
-          </a>
-          <a href="signup.html" class="relative overflow-hidden group/btn px-6 py-3 rounded-full font-black text-[11px] uppercase tracking-[0.1em] text-black bg-[#39FF14] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(57,255,20,0.4)] hover:-translate-y-0.5">
-            <span class="relative z-10">Signup</span>
-            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
-          </a>
-        </div>
-      </div>
-
+  <div class="flex items-center gap-2 border-s border-black/10 dark:border-white/10 ps-4">
+    <a href="login.html" class="px-5 py-2.5 font-bold text-[11px] uppercase tracking-widest text-white bg-black rounded-full hover:-translate-y-0.5 transition-all">
+      Login
+    </a>
+    <a href="signup.html" class="relative overflow-hidden group/btn px-6 py-3 rounded-full font-black text-[11px] uppercase tracking-[0.1em] text-black bg-[#39FF14] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(57,255,20,0.4)] hover:-translate-y-0.5">
+      <span class="relative z-10">Signup</span>
+      <div class="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+    </a>
+  </div>
+</div>
       <div class="flex xl:hidden">
         <button id="mobileBtn" class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-black dark:bg-transparent border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)] transition-all active:scale-95 group">
           <i id="mobileIcon" class="fas fa-bars text-xl text-[#39FF14] transition-all duration-300"></i>
