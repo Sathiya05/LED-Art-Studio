@@ -51,6 +51,10 @@
         html[dir="rtl"] .mr-3 { margin-right: 0 !important; margin-left: 0.75rem !important; }
         html[dir="rtl"] .pl-4 { padding-left: 0 !important; padding-right: 1rem !important; }
         html[dir="rtl"] .pr-6 { padding-right: 0 !important; padding-left: 1.5rem !important; }
+        html[dir="rtl"] .border-l { border-left-width: 0 !important; border-right-width: 1px !important; }
+        html[dir="rtl"] .border-r { border-right-width: 0 !important; border-left-width: 1px !important; }
+        html[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 1 !important; }
+        html[dir="rtl"] .text-right { text-align: left !important; }
         html[dir="rtl"] .text-left { text-align: right !important; }
         html[dir="rtl"] .lg\:text-right { text-align: left !important; }
 
@@ -86,7 +90,7 @@
         <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 flex-shrink-0 bg-white dark:bg-[#111111] shadow-2xl lg:shadow-none flex flex-col h-full border-r border-gray-200 dark:border-laser/20 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
 
             <div class="px-6 pt-8 pb-6 flex items-center justify-between border-b border-gray-100 dark:border-white/5">
-                <a href="index.html" class="flex items-center space-x-3 group shrink-0">
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
         <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-black dark:bg-transparent border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] group-hover:scale-105 transition-all duration-500">
             <i class="fas fa-bolt text-[#39FF14] text-xl transform group-hover:rotate-12 transition-transform duration-500"></i>
         </div>

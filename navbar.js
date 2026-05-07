@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="container mx-auto px-4 xl:px-8">
     <div class="flex items-center justify-between h-20 md:h-24">
 
-      <a href="index.html" class="flex items-center space-x-3 group shrink-0">
+      <a href="index.html" class="flex items-center gap-3 group shrink-0">
         <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-black dark:bg-transparent border-2 border-[#39FF14] shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:shadow-[0_0_25px_rgba(57,255,20,0.5)] group-hover:scale-105 transition-all duration-500">
             <i class="fas fa-bolt text-[#39FF14] text-xl transform group-hover:rotate-12 transition-transform duration-500"></i>
         </div>
@@ -174,6 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
     /* RTL Adjustments */
     [dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
     [dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+    [dir="rtl"] .ps-4 { padding-left: 0; padding-right: 1rem; }
+    [dir="rtl"] .border-s { border-left-width: 0; border-right-width: 1px; }
+    [dir="rtl"] .text-right { text-align: left; }
+    [dir="rtl"] .text-left { text-align: right; }
+    [dir="rtl"] .space-x-0\.5 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 1; }
     [dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 1; }
     [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 1; }
     [dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) { --tw-space-x-reverse: 1; }
